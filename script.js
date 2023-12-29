@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const pageHistory = [];
 
-function loadProblem('CMI-Prep-MSDS/${url}') {
+function loadProblem(url) {
     const problemListContainer = document.getElementById("problem-list-container");
     problemListContainer.innerHTML = '';
     problemListContainer.style.marginTop = '0rem';
