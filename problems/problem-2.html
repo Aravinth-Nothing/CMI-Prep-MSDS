@@ -1,0 +1,52 @@
+<h2 id="tdpl">Problem 2</h2>
+    <p>
+    The value of $\sqrt{7+\sqrt{7-\sqrt{7+\sqrt{7-...\infty}}}}$ 
+    </p>
+    <h2>
+    Solution
+    </h2>
+    <button class="reveal-buttons">&#9660;</button>
+    <div class="solution">
+    <p>
+    Let $$\sqrt{7+\sqrt{7-\sqrt{7+\sqrt{7-...\infty}}}}=x$$
+    Square on Both Sides.$$7+\sqrt{7-\sqrt{7+\sqrt{7-\sqrt{7+...\infty}}}}=x^2$$
+    $$x^2-7=\sqrt{7-\sqrt{7+\sqrt{7-\sqrt{7...\infty}}}}$$
+    $$(x^2-7)^2=7-\sqrt{7+\sqrt{7-\sqrt{7...\infty}}}$$
+    $$(x^2-7)^2-7=-x$$
+    (Expanding)
+    $$x^4-14x^2+x+42=0$$
+    Trying out $x=2$,
+    $$12-56+2+42 = 4 \neq 0$$
+    Trying out $x=-2$,
+    $$12-56-2+42 = 0$$
+    $\therefore x=-2$ is one of the roots.
+    <br>
+    Divide $x^4-14x^2+x+42=0$ using $x+2$ using synthetic division.
+    \begin{array}{c|rrrrr}
+   -2 & 1 & 0 & -14 & 1 & 42\\
+      & 0 & -2 & 4 & 20 & -42\\
+\hline
+   & 1 & -2 & -10 & 21 & 0\\
+\end{array}
+$$\therefore x^4-14x^2+x+42=0 = (x+2)(x^3-2x^2-10x+21)$$
+To find roots of $(x^3-2x^2-10x+21)$, Trying out $x=3$,
+$$27-18-30+21=48-48=0$$
+$\therefore x=3$ is one of the roots.
+Divide $x^3-2x^2-10x+21=0$ using $x-3$ using synthetic division.
+\begin{array}{c|rrrr}
+   3 & 1 & -2 & -10 & 21\\
+      & 0 & 3 & 3 & -21\\
+\hline
+       & 1 & 1 & -7 & 0\\
+\end{array}
+$$\therefore x^4-14x^2+x+42=0 = (x+2)(x-3)(x^2+x-7)$$
+Using Quadratic formula finding the roots of $x^2+x-7$,
+$$x=\frac{-1\pm\sqrt{29}}{3}$$
+Therefore, all the possible values of x are, 
+$$x=-2,3,\frac{-1+\sqrt{29}}{3},\frac{-1-\sqrt{29}}{3}$$
+Since $\sqrt{7+\sqrt{7-\sqrt{7+\sqrt{7-...\infty}}}}$ is under a square root, it cannot be negative, $x$ has to be positive.
+$\therefore$The only possible Solution is, 
+$$x=3$$
+
+    </p>
+</div>
