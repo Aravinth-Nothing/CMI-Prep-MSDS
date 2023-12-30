@@ -157,7 +157,8 @@ function updateBackButtonVisibility() {
     const backButton = document.getElementById("backButton");
     if (window.innerWidth <= 1064) {
         if (backButton) {
-            backButton.style.display = "none"; // Hide the button
+            backButton.style.display = "none";
+             // Hide the button
         }
     } else {
         // Show or hide the button based on the page history
