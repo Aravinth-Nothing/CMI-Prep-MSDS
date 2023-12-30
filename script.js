@@ -25,9 +25,10 @@ function loadProblem(url) {
     fetch(url)
         .then(response => response.text())
         .then(problemHtml => {
-            // Update the problem content
             document.getElementById("body-container").innerHTML = problemHtml;
-            MathJax.typeset();
+            MathJax.typesetPromise().then(() => {
+        
+            }).catch((err) => console.error('Typesetting failed:', err));
             const revealButtons = document.querySelectorAll('.reveal-buttons');
             revealButtons.forEach(button => {
                 button.addEventListener('click', toggleSolution);
