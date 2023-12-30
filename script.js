@@ -63,6 +63,15 @@ function loadProblemList() {
                 type: "Numerical",
             },
         },
+        {
+            title: "Problem 3",
+            file: "problem-3.html",
+            tags: {
+                difficulty: "medium",
+                concept: ["trigonometry"],
+                type: "Proof",
+            },
+        },
         // Add more problems as needed
     ];
 
@@ -184,6 +193,7 @@ function createFilterHTML() {
                 <label><input type="checkbox" value="type-MSQ" /> MSQ</label>
                 <label><input type="checkbox" value="type-Numerical" /> Numerical</label>
                 <label><input type="checkbox" value="type-ShortAnswer" /> Short Answer</label>
+                <label><input type="checkbox" value="type-Proof" /> Proof</label>
             </div>
         </div>
     `;
