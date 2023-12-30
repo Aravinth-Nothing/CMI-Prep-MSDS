@@ -73,6 +73,15 @@ function loadProblemList() {
                 type: "Proof",
             },
         },
+        {
+            title: "Problem 4",
+            file: "problem-4.html",
+            tags: {
+                difficulty: "medium",
+                concept: ["trigonometry"],
+                type: "Proof",
+            },
+        },
         // Add more problems as needed
     ];
 
