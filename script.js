@@ -9,6 +9,19 @@ document.addEventListener("DOMContentLoaded", function () {
         backButton.addEventListener("click", goBack);
     }
     window.addEventListener("resize", updateBackButtonVisibility);
+
+    const isDarkMode = localStorage.getItem("darkMode") === "true";
+    setDarkMode(isDarkMode);
+    const darkModeToggle = document.getElementById('darkmode-toggle');
+    darkModeToggle.addEventListener('change', toggleDarkMode);
+    if (darkModeToggle) {
+        darkModeToggle.checked = isDarkMode;
+    }
+    // Check dark mode preference from local storage
+
+
+    // Apply dark mode based on the stored preference
+    setDarkMode(isDarkMode);
 });
 
 const pageHistory = [];
@@ -36,7 +49,6 @@ function loadProblem(url) {
 
             // Save the current page URL to history
             pageHistory.push(url);
-            console.log(pageHistory)
 
             // Show or hide the back button based on the updated history
             updateBackButtonVisibility();
@@ -44,6 +56,7 @@ function loadProblem(url) {
         .catch(error => console.error("Error loading problem:", error));
 }
 function loadProblemList() {
+    console.log('Executed.')
     // Fetch the problem HTML content
     const problemsList = [
         {
@@ -120,7 +133,6 @@ function loadProblemList() {
     });
 
     pageHistory.push("problem-list");
-    console.log(pageHistory)
 
     // Show back button if there is a page to go back to
     updateBackButtonVisibility();
@@ -131,7 +143,7 @@ function goBack() {
     if (pageHistory.length > 1) {
         // Pop the current page from history
         pageHistory.pop();
-        console.log('Worked.')
+
         // Get the previous page from history
         const previousPage = pageHistory[pageHistory.length - 1];
 
@@ -221,7 +233,10 @@ function attachFilterEventListeners() {
     // Attach event listeners to filter checkboxes
     const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
     filterCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('click', loadProblemList);
+        // Exclude the dark mode toggle button
+        if (checkbox.id !== 'darkmode-toggle') {
+            checkbox.addEventListener('click', loadProblemList);
+        }
     });
 }
 function problemListPro(){
@@ -231,4 +246,16 @@ function problemListPro(){
 function toggleFilter() {
     const filterContainer2 = document.querySelector('.filter-container-2');
     filterContainer2.classList.toggle('active');
+}
+function toggleDarkMode() {
+    // Toggle dark mode
+    const isDarkMode = document.body.classList.toggle("dark-mode");
+
+    // Save dark mode preference to local storage
+    localStorage.setItem("darkMode", isDarkMode.toString());
+}
+
+function setDarkMode(isDarkMode) {
+    // Set dark mode based on the provided preference
+    document.body.classList.toggle("dark-mode", isDarkMode);
 }

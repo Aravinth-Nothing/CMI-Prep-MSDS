@@ -59,6 +59,9 @@
     overflow-y: scroll;
   }
 
+  .fab{
+  color : #000000;
+}
     body::-webkit-scrollbar {
         width: 15px; 
     }
@@ -74,9 +77,21 @@
       padding: 2rem;
       background-color: #F4EAE0;
       border: 1px solid #F4DFC8;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .nav-table{
+      width: 100%; 
+      border:0; 
+      background-color: #F4EAE0;
     }
     .nav-links{
       text-decoration: none;
+      color: #000000; 
+      font-weight: bold;
+    }
+    .nav-bar-title{
+      margin: 0px; 
+      color: #000000;
     }
     .hover-underline-animation {
   display: inline-block;
@@ -118,6 +133,7 @@
 }
 .reveal-buttons:hover{
   font-size: 17px;
+  border-radius: 10%;
 }
 .filter-toggle{
   text-align: center;
@@ -167,6 +183,94 @@
     a {
   --link-focus-outline: none;
 }
+
+.toggle {
+  position: relative;
+  width: 50px;
+  height: 24px;
+  background-color: #ccc;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+
+.toggle span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+.blog-img{
+  filter: invert(100%); 
+}
+input:checked + .toggle span {
+  transform: translateX(26px);
+}
+
+.sr-only {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+
+
+.dark-mode{
+  background-color: #000000;
+  color: #e0dfdc;
+}
+.dark-mode .main-container{
+  background-color: #000000;
+}
+.dark-mode .nav-table{
+  background-color: #2d2d2d;
+}
+.dark-mode .nav-bar{
+  background-color: #2d2d2d;
+  border: 1px solid #919191;
+  border-radius: 2%;
+  box-shadow: 0 0 10px #e0dfdc;
+  color: #e0dfdc;
+}
+.dark-mode .nav-bar-title{
+  margin: 0px; 
+  color: #e0dfdc;
+}
+.dark-mode .nav-links{
+  margin: 0px; 
+  color: #e0dfdc;
+}
+.dark-mode .hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #e0dfdc;
+}
+.dark-mode .hover-underline-animation::after {
+  background-color: #e0dfdc;
+}
+.dark-mode .reveal-buttons{
+  background-color: #2d2d2d;
+  color: #e0dfdc;
+}
+.dark-mode #problem-list-container li{
+  background-color: #2d2d2d;
+  border: #4F4557;
+}
+.dark-mode #problem-list-container a{
+  color: #e0dfdc;
+}
+.dark-mode .fab{
+  color: #e0dfdc;
+}
+.dark-mode .blog-img{
+  filter: invert(0%);
+}
+.dark-mode .back-triangle{
+      color: #e0dfdc;
+  }
 @media only screen and (max-width: 600px) {
     #main-container{
       margin: 0 50px;
@@ -181,17 +285,25 @@
 <body>
   <a id="backButton"><p class="back-triangle">&#9664</p></a>
   <div class="main-container">
-  <div class="nav-bar" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
-    <table class="nav-table" style="width: 100%; border:0; background-color: #F4EAE0;">
+  <div class="nav-bar">
+    <table class="nav-table">
       <tr> 
       <td style="border: 0; width: 50%;">
-        <a href="javascript:void(0);" onclick="loadProblem('home.html');"><h3 style="margin: 0px; color: #000000;">CMI Preparation</h1></a>
+        <a href="javascript:void(0);" onclick="loadProblem('home.html');"><h3 class="nav-bar-title">CMI Preparation</h3></a>
       </td>
       <td style="border: 0; text-align: right; width: 25%;">
-        <a href="javascript:void(0);" onclick="problemListPro();" class="nav-links hover-underline-animation" style="color: #000000; font-weight: bold;">Problems</a>
+        <a href="javascript:void(0);" onclick="problemListPro();" class="nav-links hover-underline-animation">Problems</a>
       </td>
       <td style="border: 0; text-align: right; width: 20%;">
-        <a href="javascript:void(0);" class="nav-links hover-underline-animation" style="color: #000000; margin-right: 1rem; font-weight: bold;" onclick="loadProblem('contact.html');">Contact</a>
+        <a href="javascript:void(0);" class="nav-links hover-underline-animation" style=" margin-right: 1rem; font-weight: bold;" onclick="loadProblem('contact.html');">Contact</a>
+      </td>
+      <td>
+        <input type="checkbox" class="sr-only" id="darkmode-toggle">
+  <label for="darkmode-toggle" class="toggle">
+    <span></span>
+  </label>
+  <span></span>
+</label>
       </td>
       </tr>
     </table>

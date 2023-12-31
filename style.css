@@ -302,8 +302,6 @@ table:not(.borders-custom) {
   border-spacing: 0;
   width: auto;
   max-width: 100%;
-  border-top: var(--border-width-thick) solid var(--table-border-color);
-  border-bottom: var(--border-width-thick) solid var(--table-border-color);
   /* display: block; */
   overflow-x: auto; /* does not work because element is not block */
   /* white-space: nowrap; */
@@ -317,14 +315,7 @@ table:not(.borders-custom) tr > th[scope='col'] {
 table:not(.borders-custom) tr > th[scope='row'] {
   border-right: var(--border-width-thin) solid var(--table-border-color);
 }
-table:not(.borders-custom) > tbody > tr:first-child > td,
-table:not(.borders-custom) > tbody > tr:first-child > th {
-  border-top: var(--border-width-thin) solid var(--table-border-color);
-}
-table:not(.borders-custom) > tbody > tr:last-child > td,
-table:not(.borders-custom) > tbody > tr:last-child > th {
-  border-bottom: var(--border-width-thin) solid var(--table-border-color);
-}
+
 
 th,
 td {
