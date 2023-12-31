@@ -184,11 +184,31 @@
   --link-focus-outline: none;
 }
 
+.blog-img{
+  filter: invert(100%); 
+}
+input:checked + .toggle span::before {
+  background-image: url('static/moon.png');
+  width: 50%; /* Adjusted width for the image */
+  height: 50%;
+  filter: invert(100%);
+  
+}
+input:checked + .toggle{
+  background-color: #000000;
+}
+.sr-only {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+
 .toggle {
   position: relative;
-  width: 50px;
+  width: 49px; /* Adjusted width to accommodate both icons */
   height: 24px;
-  background-color: #ccc;
+  background-color: #FAF6F0;
+  border: 2px solid #F4DFC8;
   border-radius: 12px;
   cursor: pointer;
   display: flex;
@@ -197,24 +217,34 @@
 }
 
 .toggle span {
+  position: relative;
   display: block;
-  width: 20px;
-  height: 20px;
-  background-color: #fff;
+  width: 30px; /* Adjusted width for the container */
+  height: 30px; /* Adjusted height for the container */
   border-radius: 50%;
   transition: transform 0.3s;
 }
-.blog-img{
-  filter: invert(100%); 
-}
-input:checked + .toggle span {
-  transform: translateX(26px);
+
+.toggle span::before {
+  content: "";
+  position: absolute;
+  width: 70%; /* Adjusted width for the image */
+  height: 70%; /* Adjusted height for the image */
+  background-image: url('static/sun.png'); /* Default image */
+  background-size: cover;
+  background-position: center; /* Center the background image */
+  border-radius: 50%;
+  transform: translateX(2px) translateY(4px);
 }
 
-.sr-only {
-  position: absolute;
-  left: -9999px;
-  opacity: 0;
+.toggle span img {
+  width: 100%; /* Make the image fill the container */
+  height: 100%; /* Make the image fill the container */
+  border-radius: 50%;
+}
+
+input:checked + .toggle span {
+  transform: translateX(23px) translateY(2px); /* Apply the transform to .toggle span */
 }
 
 
@@ -257,10 +287,13 @@ input:checked + .toggle span {
 }
 .dark-mode #problem-list-container li{
   background-color: #2d2d2d;
-  border: #4F4557;
+  border: 1px solid #fafafa;
 }
 .dark-mode #problem-list-container a{
   color: #e0dfdc;
+}
+.dark-mode #problem-list-container li:hover{
+  background-color: #000000;
 }
 .dark-mode .fab{
   color: #e0dfdc;
@@ -299,9 +332,7 @@ input:checked + .toggle span {
       </td>
       <td>
         <input type="checkbox" class="sr-only" id="darkmode-toggle">
-  <label for="darkmode-toggle" class="toggle">
-    <span></span>
-  </label>
+<label for="darkmode-toggle" class="toggle">
   <span></span>
 </label>
       </td>
