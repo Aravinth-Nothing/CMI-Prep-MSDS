@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">  
@@ -305,11 +305,9 @@ input:checked + .toggle span {
       color: #e0dfdc;
   }
 @media only screen and (max-width: 600px) {
-    #main-container{
-      margin: 0 50px;
-    }
-
-    /* Add more specific styles for smaller screens */
+ .mobile-control{
+  padding: 0 30px;
+ }
 }
 
   </style>
@@ -339,6 +337,7 @@ input:checked + .toggle span {
       </tr>
     </table>
   </div>
+  <div class="mobile-control">
   <div id="filter-container" class="filter-container">
 
   </div>
@@ -353,6 +352,7 @@ input:checked + .toggle span {
   <div class="empty" style="height: 100px;">
 
   </div>
+</div>
 </div>
   <script>
     
