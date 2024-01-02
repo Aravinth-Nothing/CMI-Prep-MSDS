@@ -1,0 +1,20 @@
+<h2 id="idpl">Problem 7</h2>
+<p>Prove that $\tan\theta + \tan(60^\circ+\theta)+\tan(120^\circ+\theta)=3\tan3 \theta$</p>
+<h2>Solution</h2>
+<button class="reveal-buttons">&#9660;</button>
+<div class="solution">
+  <p>
+    Note: $\tan30^\circ=\frac{1}{\sqrt{3}},\tan45^\circ=1,\tan60^\circ=\sqrt{3}$
+    <br>
+    $\tan120^\circ=\tan(90^\circ+30^\circ)=-\cot30^\circ=-\sqrt{3}$
+    <br><br>
+    From the left hand side of the equation, $$\tan\theta+\frac{\tan60^\circ+\tan\theta}{1-\tan60^\circ \tan\theta}+\frac{\tan120^\circ+\tan\theta}{1-\tan120^\circ \tan\theta}$$
+    $$=\tan\theta+\frac{\sqrt{3}+\tan\theta}{1-\sqrt{3}\tan\theta}+\frac{-\sqrt{3}+\tan\theta}{1+\sqrt{3}\tan\theta}$$
+    $$=\tan\theta+\left(\frac{(\sqrt{3}+\tan\theta)(1+\sqrt{3}\tan\theta)+(\tan\theta-\sqrt{3})(1-\sqrt{3}\tan\theta)}{1-3\tan^2\theta}\right)$$
+    $$=\tan\theta+\left(\frac{\cancel{\sqrt{3}}+3\tan\theta+\tan\theta+\cancel{\sqrt{3}\tan^2 \theta}+\tan\theta-\cancel{\sqrt{3}\tan^2 \theta}-\cancel{\sqrt{3}}+3\tan\theta}{1-3\tan^2\theta}\right)$$
+    $$=\tan\theta + \left(\frac{8\tan\theta}{1-3\tan^2\theta}\right)$$
+    $$=\frac{9\tan\theta - 3\tan^3\theta}{1-3\tan^2 \theta} = 3\left(\frac{3\tan\theta-\tan^3\theta}{1-3\tan^2\theta}\right)$$
+    $$=3\tan3\theta$$
+    <center>Hence Proved.</center>
+  </p>
+</div>
