@@ -131,6 +131,15 @@ function loadProblemList() {
                 type: "Proof",
             },
         },
+        {
+            title: "Problem 9",
+            file: "problem-9.html",
+            tags: {
+                difficulty: "medium",
+                concept: ["trigonometry"],
+                type: "Numerical",
+            },
+        },
         // Add more problems as needed
     ];
 
