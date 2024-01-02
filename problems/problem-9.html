@@ -1,0 +1,21 @@
+<h2 id="idpl">Problem 9</h2>
+<p> If $\frac{x}{\cos\theta}=\frac{y}{\cos(\theta-\frac{2\pi}{3})}=\frac{z}{\cos(\theta+\frac{2\pi}{3})},$</p>
+then what is the value of $x+y+z$?
+<h2>Solution</h2>
+<button class="reveal-buttons">&#9660;</button>
+<div class="solution">
+  <p>Let $$\frac{x}{\cos\theta}=\frac{y}{\cos(\theta-\frac{2\pi}{3})}=\frac{z}{\cos(\theta+\frac{2\pi}{3})}=k$$
+    $$x=k\cos\theta\label{one}\tag{1}$$
+    To find $y$,
+    $$\cos(\theta-\frac{2\pi}{3})=\cos\theta \cos \frac{2\pi}{3}+\sin\theta \sin\frac{2\pi}{3}$$
+    Note: $\cos(\pi-x)=-\cos x$, <br>
+    $cos\frac{2\pi}{3}=\cos(\pi-\frac{\pi}{3})=-\cos\frac{\pi}{3}=-\frac{1}{2}$ <br>
+    $\sin\frac{2\pi}{3}=\sqrt{1-(\frac{-1}{2})^2}=\frac{\sqrt{3}}{2}$
+    $$\cos(\theta-\frac{2\pi}{3})=-\frac{\cos\theta}{2}+\frac{\sqrt{3}\sin\theta}{2}$$
+    $$\therefore y=-\frac{k\cos\theta}{2}+\frac{k\sqrt{3}\sin\theta}{2}$$
+    Similarly,
+    $$z=-\frac{k\cos\theta}{2}-\frac{k\sqrt{3}\sin\theta}{2}$$
+    $$x+y+z=\cancel{k\cos\theta}-\cancel{\frac{k\cos\theta}{2}}+\cancel{\frac{k\sqrt{3}\sin\theta}{2}}-\cancel{\frac{k\cos\theta}{2}}-\cancel{\frac{k\sqrt{3}\sin\theta}{2}}$$
+    $$\therefore x+y+z=0$$
+  </p>
+</div>
