@@ -95,6 +95,24 @@ function loadProblemList() {
                 type: "Proof",
             },
         },
+        {
+            title: "Problem 5",
+            file: "problem-5.html",
+            tags: {
+                difficulty: "medium",
+                concept: ["trigonometry"],
+                type: "Numerical",
+            },
+        },
+        {
+            title: "Problem 6",
+            file: "problem-6.html",
+            tags: {
+                difficulty: "medium",
+                concept: ["trigonometry"],
+                type: "Proof",
+            },
+        },
         // Add more problems as needed
     ];
 
