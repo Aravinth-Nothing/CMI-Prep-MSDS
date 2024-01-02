@@ -140,6 +140,15 @@ function loadProblemList() {
                 type: "Numerical",
             },
         },
+        {
+            title: "Problem 10",
+            file: "problem-10.html",
+            tags: {
+                difficulty: "medium",
+                concept: ["trigonometry"],
+                type: "ShortAnswer",
+            },
+        },
         // Add more problems as needed
     ];
 
