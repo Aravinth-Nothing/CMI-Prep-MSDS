@@ -1,0 +1,20 @@
+<h2 id="idpl">Problem 11</h2>
+<p>If $\sin\theta_1-\sin\theta_2=a, \cos\theta_1+\cos\theta_2=b$ then,<br>a) $a^2+b^2\geq 4$<br>b) $a^2+b^2\leq 4$<br>c) $a^2+b^2\geq 3$<br>d) $a^2+b^2\leq 2$</p>
+<h2>Solution</h2>
+<button class="reveal-buttons">&#9660;</button>
+<div class="solution">
+  <p>
+    Squaring given equations,
+    $$a^2=\sin^2\theta_1+\sin^2\theta_2-2\sin\theta_1\sin\theta_2 \label{one}\tag{1}$$
+    $$b^2=\cos^2\theta_1+\cos^2\theta_2+2\cos\theta_1\cos\theta_2 \label{two}\tag{2}$$
+    $$a^2+b^2=(\sin^2\theta_1+\cos^2\theta_1)+(\sin^2\theta_2+\cos^2\theta_2)-2\sin\theta_1\sin\theta_2+2\cos\theta_1\cos\theta_2$$
+    Note: $\sin^2\theta+\cos^2\theta=1$
+    $$a^2+b^2=1+1+2(\cos\theta_1\cos\theta_2-\sin\theta_1\sin\theta_2)$$
+    $$a^2+b^2=2+2(\cos(\theta_1-\theta_2))$$
+    Minimum value of $\cos(\theta_1-\theta_2)=-1$: <br>
+    Hence the Minimum value of $a^2+b^2 = 2+2(-1) =2-2 =0$ <br>
+    Maximum value of $\cos(\theta_1-\theta_2)=1$: <br>
+    Hence the Maximum value of $a^2+b^2 = 2+2(1) =2+2 =4$
+    <center>Hence b) $a^2+b^2\leq 4$ is the Correct answer.</center>
+  </p>
+</div>

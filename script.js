@@ -149,6 +149,15 @@ function loadProblemList() {
                 type: "ShortAnswer",
             },
         },
+        {
+            title: "Problem 11",
+            file: "problem-11.html",
+            tags: {
+                difficulty: "medium",
+                concept: ["trigonometry"],
+                type: "MCQ",
+            },
+        },
         // Add more problems as needed
     ];
 
