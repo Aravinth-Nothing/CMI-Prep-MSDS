@@ -167,6 +167,15 @@ function loadProblemList() {
                 type: "MSQ",
             },
         },
+        {
+            title: "Problem 13",
+            file: "problem-13.html",
+            tags: {
+                difficulty: "difficult",
+                concept: ["functions","trigonometry"],
+                type: "MSQ",
+            },
+        },
         // Add more problems as needed
     ];
 
