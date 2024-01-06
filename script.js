@@ -176,6 +176,15 @@ function loadProblemList() {
                 type: "MSQ",
             },
         },
+        {
+            title: "Problem 14",
+            file: "problem-14.html",
+            tags: {
+                difficulty: "medium",
+                concept: ["calculus","trigonometry"],
+                type: "MCQ",
+            },
+        },
         // Add more problems as needed
     ];
 

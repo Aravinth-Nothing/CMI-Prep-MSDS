@@ -1,0 +1,27 @@
+
+<h2 id="idpl">Problem 14</h2>
+<p>$\displaystyle \lim_{x\to \frac{\pi}{4}} \frac{\int_2^{\sec^2x} f(t)dt}{x^2-\frac{\pi^2}{16}}$ equals to, <br> 
+a) $\frac{8}{\pi}f(2)$ <br>
+a) $\frac{2}{\pi}f(2)$ <br>
+a) $\frac{2}{\pi}f(\frac{1}{2})$ <br>
+a) $4f(2)$
+</p>
+<h2>Solution</h2>
+<button class="reveal-buttons">&#9660;</button>
+<div class="solution">
+  <p>
+    Note: <br>
+    Lebinitz rule: <br>
+    $$\frac{d}{dx}\int_{h(x)}^{g(x)} f(x)dx=f(g(x)).g'(x)-f(h(x)).h'(x)$$
+
+    We use L'Hospital's rule and differentiate, numerator and denominator.
+    $$\displaystyle \lim_{x\to \frac{\pi}{4}}\frac{\int_2^{\sec^2x} f(t)dt}{x^2-\frac{\pi^2}{16}}=\displaystyle \lim_{x\to \frac{\pi}{4}}\frac{f(\sec^2x).2\sec x.\sec x\tan x -f(2).(0)}{2x}$$
+    Apply $x=\frac{\pi}{4}$ in the limit,
+    $$$$
+    $$=\displaystyle \lim_{x\to \frac{\pi}{4}}\frac{f(\sec^2\frac{\pi}{4}).2\sec \frac{\pi}{4}.\sec \frac{\pi}{4}\tan \frac{\pi}{4} -f(2).(0)}{2\frac{\pi}{4}}$$
+    Note: $\sec\frac{\pi}{4}=\sqrt{2},\tan\frac{\pi}{4}=1$
+    $$=\frac{f(2).2(\sqrt{2}).(\sqrt{2}).(1)}{\left(\frac{\pi}{2}\right)}=\frac{8f(2)}{\pi}$$
+    <center>a) $\frac{8}{\pi}f(2)$ is Correct.</center>
+
+  </p>
+</div>
