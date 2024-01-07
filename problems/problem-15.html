@@ -1,0 +1,138 @@
+<h2 id="idpl">Problem 14</h2>
+<p>
+  In the following [x] denotes the greatest integer less than or equal to x. Match the functions in Column I with the
+properties in Column II and indicate your answer by darkening the appropriate bubbles in the 4 × 4 matrix given in
+the ORS.
+
+<br><br>
+<table style="width: 100%;">
+<tr>
+  <th>Column I</th>
+  <th>Column II</th>
+</tr>
+<tr>
+  <td>A) $x|x|$</td>
+  <td>p) Continous in $(-1,1)$</td>
+</tr>
+<tr>
+  <td>B) $\sqrt{|x|}$</td>
+  <td>q) Differentiable in $(-1,1)$</td>
+</tr>
+<tr>
+  <td>C) $x+[x]$</td>
+  <td>r) Strictly increasing in $(-1,1)$</td>
+</tr>
+<tr>
+  <td>D) $|x-1|+|x+1|$</td>
+  <td>s) not Differentiable at atleast <br> one point in $(-1,1)$</td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+</tr>
+</table>
+
+</p>
+<h2>Solution</h2>
+<button class="reveal-buttons">&#9660;</button>
+<div class="solution">
+<table>
+<tr>
+  <th  style="width: 50%;">Plot</th>
+  <th style="width: 50%;">Interpretation</th>
+</tr>
+<tr>
+  <td>Plotting $x|x|:$</td>
+</tr>
+<tr>
+  <td>
+  <div class="tikz-container">
+    <script type="text/tikz">
+      \begin{tikzpicture}
+    % Axis
+    \draw[->] (-5,0) -- (5,0) node[below] {$x$};
+    \draw[->] (0,-5) -- (0,5) node[left] {$y$};
+
+    % Quadratic equation graph
+    \draw[blue, domain=-2.2:2.2, samples=100] plot (\x, \x*abs{\x}) node[right] {$y = x|x|$};
+\end{tikzpicture}
+    </script>
+ </div>
+</td>
+<td>
+  We can see that the function is, <br> p) Continous in $(-1,1)$ <br> q) Differentiable in $(-1,1)$
+</td>
+</tr>
+
+
+<tr>
+  <td>Plotting $\sqrt{|x|}:$</td>
+</tr>
+<tr>
+  <td>
+  <div class="tikz-container">
+    <script type="text/tikz">
+      \begin{tikzpicture}
+    % Axis
+    \draw[->] (-5,0) -- (5,0) node[below] {$x$};
+    \draw[->] (0,-5) -- (0,5) node[left] {$y$};
+
+    % Quadratic equation graph
+    \draw[blue, domain=-4.5:4.5, samples=100] plot (\x, sqrt{abs{\x}});
+\end{tikzpicture}
+    </script>
+ </div>
+</td>
+<td>
+  We can see that the function is, p) Continous in $(-1,1)$ <br> s) not Differentiable at atleast <br> one point in $(-1,1)$
+</td>
+</tr>
+
+<tr>
+  <td>Plotting $x+[x]$</td>
+</tr>
+
+<tr>
+  <td>
+  <div class="tikz-container">
+    <script type="text/tikz">
+      \begin{tikzpicture}
+    % Axis
+    \draw[->] (-5,0) -- (5,0) node[below] {$x$};
+    \draw[->] (0,-5) -- (0,5) node[left] {$y$};
+
+    % Quadratic equation graph
+    \draw[blue, domain=-2.2:2.2, samples=100] plot (\x, {floor(\x)+\x}) node[right] {$x+[x]$};
+\end{tikzpicture}
+    </script>
+ </div>
+</td>
+<td>
+  We can see that the function is, r) Strictly increasing in $(-1,1)$ s) not Differentiable at atleast <br> one point in $(-1,1)$
+</td>
+</tr>
+
+<tr>
+  <td>Plotting $|x-1|+|x+1|$</td>
+</tr>
+<tr>
+  <td>
+  <div class="tikz-container">
+    <script type="text/tikz">
+      \begin{tikzpicture}
+    % Axis
+    \draw[->] (-5,0) -- (5,0) node[below] {$x$};
+    \draw[->] (0,-5) -- (0,5) node[left] {$y$};
+
+    % Quadratic equation graph
+    \draw[blue, domain=-2.2:2.2, samples=100] plot (\x, {abs(\x-1)+abs(\x+1)}) node[right] {$|x - 1|+|x+1|$};
+\end{tikzpicture}
+    </script>
+ </div>
+</td>
+<td>
+  We can see that the function is, <br> p) Continous in $(-1,1)$ <br> q) Differentiable in $(-1,1)$
+
+</td>
+</tr>
+</table>

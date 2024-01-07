@@ -185,6 +185,15 @@ function loadProblemList() {
                 type: "MCQ",
             },
         },
+        {
+            title: "Problem 15",
+            file: "problem-15.html",
+            tags: {
+                difficulty: "medium",
+                concept: ["calculus","functions","graph"],
+                type: "ShortAnswer",
+            },
+        },
         // Add more problems as needed
     ];
 
@@ -299,6 +308,7 @@ function createFilterHTML() {
                 <label><input type="checkbox" value="concept-sequenceAndSeries" /> Sequence And Series</label>
                 <label><input type="checkbox" value="concept-polynomials" />Polynomials</label>
                 <label><input type="checkbox" value="concept-functions" />Functions</label>
+                <label><input type="checkbox" value="concept-graph" />Graph</label>
                 <!-- Add more concepts as needed -->
             </div>
             <div class="filter-column">
