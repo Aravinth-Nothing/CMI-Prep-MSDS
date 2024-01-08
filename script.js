@@ -152,6 +152,15 @@ const problemsList = [
             type: "MSQ",
         },
     },
+    {
+        title: "Problem 18",
+        file: "problem-18.html",
+        tags: {
+            difficulty: "hard",
+            concept: ["calculus","functions","trigonometry"],
+            type: "MCQ",
+        },
+    },
     // Add more problems as needed
 ];
 document.addEventListener("DOMContentLoaded", function () {

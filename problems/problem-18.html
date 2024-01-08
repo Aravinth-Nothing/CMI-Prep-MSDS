@@ -1,0 +1,29 @@
+<h2 id="idpl">Problem 18</h2>
+<p>
+  Let $f$ and $g$ be real valued functions defined on interval $(-1, 1)$ such that $g''(x)$ is continuous, $g(0)\neq0, g'(0) = 0, g''(0) \neq 0$ and $f(x) = g(x) \sin x$. <br> <b>STATEMENT-1</b> : $\displaystyle \lim_{x\to 0 }[g(x)\cot x - g(0) \csc x]$ <br> <b>STATEMENT-2</b>: $f'(0) = g(0)$ <br> <br>
+(a) STATEMENT-1 is True, STATEMENT-2 is True ; STATEMENT-2 is a correct explanation for STATEMENT-1
+<br>(b) STATEMENT-1 is True, STATEMENT-2 is True ; STATEMENT-2 is NOT a correct explanation for STATEMENT-1
+<br>(c) STATEMENT-1 is True, STATEMENT-2 is False
+<br>(d) STATEMENT-1 is False, STATEMENT-2 is True
+</p>
+<h2>Solution</h2>
+<button class="reveal-buttons">&#9660;</button>
+<div class="solution">
+  <p>
+    $$f'(x)=g(x)\cos x +g'(x) \sin x$$
+    $$f'(0)=g(0).1+g'(0).0=g(0)$$
+    $$f'(0)=g(0)$$
+    <center>STATEMENT-2 is True.</center>
+    $$f''(x)=g'(x)\cos x-g(x)\sin x+g''(x)\sin x+g'(x)\cos x$$
+    $$f''(0)=g'(0)\cos 0-g(0)\sin x+g''(0)\sin 0+g'(0)\cos 0$$
+    $$f''(0)'=0$$
+    From STATEMENT-1:
+    $$\displaystyle \lim_{x\to 0 }[g(x)\cot x - g(0) \csc x]= \lim_{x\to 0}\left[\frac{g(x)\cos x-g(0)}{\sin x}\right]$$
+    <center>Using L'Hospital's Rule, Differentiate.</center>
+    $$= \lim_{x\to 0}\left[\frac{g'(x)\cos x-g(x)\sin x}{\cos x}\right]=\left[\frac{g'(0)\cos 0-g(0)\sin 0}{\cos 0}\right]=0$$
+    $$\displaystyle \lim_{x\to 0 }[g(x)\cot x - g(0) \csc x]=f''(0)=0$$
+    <center>STATEMENT-1 is True.</center>
+     <br>
+    <center>(b) STATEMENT-1 is True, STATEMENT-2 is True ;<br> STATEMENT-2 is NOT a correct explanation for STATEMENT-1</center>
+  </p>
+</div>
