@@ -203,6 +203,15 @@ function loadProblemList() {
                 type: "ShortAnswer",
             },
         },
+        {
+            title: "Problem 16",
+            file: "problem-16.html",
+            tags: {
+                difficulty: "medium",
+                concept: ["calculus"],
+                type: "ShortAnswer",
+            },
+        },
         // Add more problems as needed
     ];
 
