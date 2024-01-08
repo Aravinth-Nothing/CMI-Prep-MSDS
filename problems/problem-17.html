@@ -1,0 +1,32 @@
+<h2 id="idpl">Problem 17</h2>
+<p>Let $f(x)$ be a non-constant twice differentiate function defined on $(-\infty,\infty)$ such that $f(x)=f(x-1)$ and $f'(\frac{1}{4})=0$. Then,
+<br> a) $f''(x)$ vanishes at least twice on $[0,1]$ <br>
+b) $f'(\frac{1}{2})=0$ <br>
+c) $\int_{-\frac{1}{2}}^{\frac{1}{2}}f\left(x+\frac{1}{2}\right)\sin x dx =0 $ <br>
+d) $\int_{0}^{\frac{1}{2}}f(t)e^{\sin{\pi t}}dt=\int_{\frac{1}{2}}^{1}f(1-t)e^{\sin{\pi t}}dt$
+</p>
+<h2>Solution</h2>
+<button class="reveal-buttons">&#9660;</button>
+<div class="solution">
+  <p>
+    Given $f(x)=f(1-x) $, substituting $x \to x+\frac{1}{2}$ gives,
+    $f(\frac{1}{2}+x)=f(\frac{1}{2}-x)$.
+    <br> We can see that, $f(x)$ is an even function symmetric about $x=0$.
+    <br> $\therefore$ at $x=0$ , $f'(\frac{1}{2})=0$
+    <br> <center>b) is a correct option.</center> 
+    <br> Given $f'(\frac{1}{4})=0$ , Applying $x=\frac{1}{4}$ in $f(x)$, we get, $f(\frac{1}{4})=f(\frac{3}{4}).$
+    <br> $\therefore f'(\frac{3}{4})=0.$ We can see that $f'(x)=0$ for $x=\frac{1}{4},\frac{1}{2},\frac{3}{4}$
+    <br> <center>a) is a correct option.</center> <br>
+     We know that, $f(\frac{1}{2}+x)=f(\frac{1}{2}-x)$ is an even function.
+    <br> $f(\frac{1}{2}+x)\sin x$ is an odd function.
+    <br> Note: $\int_{-a}^{+a} f(x)dx = 0$ if $f(x)$ is an odd function.
+    <br> $$\therefore \int_{-\frac{1}{2}}^{\frac{1}{2}}f\left(x+\frac{1}{2}\right)\sin x dx =0 $$
+    <center> c) is a correct option.</center>
+    Take $\int_{0}^{\frac{1}{2}}f(t)e^{\sin{\pi t}}dt$, subsitute $t \to (1-t)$ <br>
+    $$=\int_{1-0}^{1-\frac{1}{2}}f(1-t)e^{\sin{\pi (t-1)}}d(1-t)=-\int_{1}^{\frac{1}{2}}f(1-t)e^{\sin{ (\pi t-\pi)}}dt$$
+    $$=\int_{\frac{1}{2}}^{1}f(1-t)e^{\sin{ \pi t}}dt$$
+    <center>d) is a correct option.</center>
+    <br>
+    <center>a),b),c),d) are all correct.</center>
+  </p>
+</div>

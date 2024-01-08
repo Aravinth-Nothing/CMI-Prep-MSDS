@@ -140,7 +140,16 @@ const problemsList = [
         tags: {
             difficulty: "medium",
             concept: ["calculus"],
-            type: "ShortAnswer",
+            type: "MCQ",
+        },
+    },
+    {
+        title: "Problem 17",
+        file: "problem-17.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["calculus","functions","trigonometry"],
+            type: "MSQ",
         },
     },
     // Add more problems as needed
