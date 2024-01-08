@@ -1,4 +1,6 @@
+
 document.addEventListener("DOMContentLoaded", function () {
+    
     // Default problem
     loadProblem("home.html");
 
@@ -38,10 +40,15 @@ function loadProblem(url) {
     fetch(url)
         .then(response => response.text())
         .then(problemHtml => {
-            document.getElementById("body-container").innerHTML = problemHtml;
-            MathJax.typesetPromise().then(() => {
+            var scriptElement = document.createElement('script');
         
-            }).catch((err) => console.error('Typesetting failed:', err));
+            scriptElement.src = 'tikzjax.js';
+
+            document.body.appendChild(scriptElement);
+
+            document.getElementById("body-container").innerHTML = problemHtml;
+            MathJax.typesetPromise()
+            
             const revealButtons = document.querySelectorAll('.reveal-buttons');
             revealButtons.forEach(button => {
                 button.addEventListener('click', toggleSolution);
@@ -49,14 +56,16 @@ function loadProblem(url) {
 
             // Save the current page URL to history
             pageHistory.push(url);
-
             // Show or hide the back button based on the updated history
             updateBackButtonVisibility();
+
+
         })
         .catch(error => console.error("Error loading problem:", error));
 }
+
+
 function loadProblemList() {
-    console.log('Executed.')
     // Fetch the problem HTML content
     const problemsList = [
         {

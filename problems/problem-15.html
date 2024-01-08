@@ -1,3 +1,5 @@
+<head><script src="/../tikzjax.js"></script></head>
+
 <h2 id="idpl">Problem 14</h2>
 <p>
   In the following [x] denotes the greatest integer less than or equal to x. Match the functions in Column I with the
@@ -5,26 +7,27 @@ properties in Column II and indicate your answer by darkening the appropriate bu
 the ORS.
 
 <br><br>
+<div class="myTikzDiv">
 <table style="width: 100%;">
 <tr>
-  <th>Column I</th>
-  <th>Column II</th>
+  <th style="text-align: center;">Column I</th>
+  <th style="text-align: center;">Column II</th>
 </tr>
 <tr>
-  <td>A) $x|x|$</td>
-  <td>p) Continous in $(-1,1)$</td>
+  <td style="text-align: center;">A) $x|x|$</td>
+  <td style="text-align: center;">p) Continous in $(-1,1)$</td>
 </tr>
 <tr>
-  <td>B) $\sqrt{|x|}$</td>
-  <td>q) Differentiable in $(-1,1)$</td>
+  <td style="text-align: center;">B) $\sqrt{|x|}$</td>
+  <td style="text-align: center;">q) Differentiable in $(-1,1)$</td>
 </tr>
 <tr>
-  <td>C) $x+[x]$</td>
-  <td>r) Strictly increasing in $(-1,1)$</td>
+  <td style="text-align: center;">C) $x+[x]$</td>
+  <td style="text-align: center;">r) Strictly increasing in $(-1,1)$</td>
 </tr>
 <tr>
-  <td>D) $|x-1|+|x+1|$</td>
-  <td>s) not Differentiable at atleast <br> one point in $(-1,1)$</td>
+  <td style="text-align: center;">D) $|x-1|+|x+1|$</td>
+  <td style="text-align: center;">s) not Differentiable at atleast <br> one point in $(-1,1)$</td>
 </tr>
 <tr>
   <td></td>
@@ -38,16 +41,17 @@ the ORS.
 <div class="solution">
 <table>
 <tr>
-  <th  style="width: 50%;">Plot</th>
-  <th style="width: 50%;">Interpretation</th>
+  <th  style="width: 50%; text-align: center;">Plot</th>
+  <th style="width: 50%; text-align: center;">Interpretation</th>
 </tr>
 <tr>
   <td>Plotting $x|x|:$</td>
 </tr>
 <tr>
-  <td>
+  <td style="text-align: center;">
   <div class="tikz-container">
     <script type="text/tikz">
+
       \begin{tikzpicture}
     % Axis
     \draw[->] (-5,0) -- (5,0) node[below] {$x$};
@@ -59,7 +63,7 @@ the ORS.
     </script>
  </div>
 </td>
-<td>
+<td style="text-align: center;">
   We can see that the function is, <br> p) Continous in $(-1,1)$ <br> q) Differentiable in $(-1,1)$
 </td>
 </tr>
@@ -69,7 +73,7 @@ the ORS.
   <td>Plotting $\sqrt{|x|}:$</td>
 </tr>
 <tr>
-  <td>
+  <td style="text-align: center;">
   <div class="tikz-container">
     <script type="text/tikz">
       \begin{tikzpicture}
@@ -83,7 +87,7 @@ the ORS.
     </script>
  </div>
 </td>
-<td>
+<td style="text-align: center;">
   We can see that the function is, p) Continous in $(-1,1)$ <br> s) not Differentiable at atleast <br> one point in $(-1,1)$
 </td>
 </tr>
@@ -93,7 +97,7 @@ the ORS.
 </tr>
 
 <tr>
-  <td>
+  <td style="text-align: center;">
   <div class="tikz-container">
     <script type="text/tikz">
       \begin{tikzpicture}
@@ -107,7 +111,7 @@ the ORS.
     </script>
  </div>
 </td>
-<td>
+<td style="text-align: center;">
   We can see that the function is, r) Strictly increasing in $(-1,1)$ s) not Differentiable at atleast <br> one point in $(-1,1)$
 </td>
 </tr>
@@ -116,7 +120,7 @@ the ORS.
   <td>Plotting $|x-1|+|x+1|$</td>
 </tr>
 <tr>
-  <td>
+  <td style="text-align: center;">
   <div class="tikz-container">
     <script type="text/tikz">
       \begin{tikzpicture}
@@ -129,10 +133,12 @@ the ORS.
 \end{tikzpicture}
     </script>
  </div>
-</td>
+</td style="text-align: center;">
 <td>
   We can see that the function is, <br> p) Continous in $(-1,1)$ <br> q) Differentiable in $(-1,1)$
 
 </td>
 </tr>
 </table>
+</div>
+
