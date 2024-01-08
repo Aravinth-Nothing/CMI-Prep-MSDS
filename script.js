@@ -1,4 +1,150 @@
-
+const problemsList = [
+    {
+        title: "Problem 1",
+        file: "problem-1.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["polynomials"],
+            type: "Numerical",
+        },
+    },
+    {
+        title: "Problem 2",
+        file: "problem-2.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["sequenceAndSeries"],
+            type: "Numerical",
+        },
+    },
+    {
+        title: "Problem 3",
+        file: "problem-3.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["trigonometry"],
+            type: "Proof",
+        },
+    },
+    {
+        title: "Problem 4",
+        file: "problem-4.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["trigonometry"],
+            type: "Proof",
+        },
+    },
+    {
+        title: "Problem 5",
+        file: "problem-5.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["trigonometry"],
+            type: "Numerical",
+        },
+    },
+    {
+        title: "Problem 6",
+        file: "problem-6.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["trigonometry"],
+            type: "Proof",
+        },
+    },
+    {
+        title: "Problem 7",
+        file: "problem-7.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["trigonometry"],
+            type: "Proof",
+        },
+    },
+    {
+        title: "Problem 8",
+        file: "problem-8.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["trigonometry"],
+            type: "Proof",
+        },
+    },
+    {
+        title: "Problem 9",
+        file: "problem-9.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["trigonometry"],
+            type: "Numerical",
+        },
+    },
+    {
+        title: "Problem 10",
+        file: "problem-10.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["trigonometry"],
+            type: "ShortAnswer",
+        },
+    },
+    {
+        title: "Problem 11",
+        file: "problem-11.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["trigonometry"],
+            type: "MCQ",
+        },
+    },
+    {
+        title: "Problem 12",
+        file: "problem-12.html",
+        tags: {
+            difficulty: "difficult",
+            concept: ["functions","calculus"],
+            type: "MSQ",
+        },
+    },
+    {
+        title: "Problem 13",
+        file: "problem-13.html",
+        tags: {
+            difficulty: "difficult",
+            concept: ["functions","trigonometry"],
+            type: "MSQ",
+        },
+    },
+    {
+        title: "Problem 14",
+        file: "problem-14.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["calculus","trigonometry"],
+            type: "MCQ",
+        },
+    },
+    {
+        title: "Problem 15",
+        file: "problem-15.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["calculus","functions","graph"],
+            type: "ShortAnswer",
+        },
+    },
+    {
+        title: "Problem 16",
+        file: "problem-16.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["calculus"],
+            type: "ShortAnswer",
+        },
+    },
+    // Add more problems as needed
+];
 document.addEventListener("DOMContentLoaded", function () {
     
     // Default problem
@@ -27,8 +173,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const pageHistory = [];
-
 function loadProblem(url) {
+    console.log(url);
+    
     const problemListContainer = document.getElementById("problem-list-container");
     problemListContainer.innerHTML = '';
     problemListContainer.style.marginTop = '0rem';
@@ -36,19 +183,14 @@ function loadProblem(url) {
     const filterContainer = document.getElementById("filter-container");
     filterContainer.innerHTML = '';
 
+
     // Fetch the problem HTML content
     fetch(url)
         .then(response => response.text())
         .then(problemHtml => {
-            var scriptElement = document.createElement('script');
-        
-            scriptElement.src = 'tikzjax.js';
-
-            document.body.appendChild(scriptElement);
 
             document.getElementById("body-container").innerHTML = problemHtml;
             MathJax.typesetPromise()
-            
             const revealButtons = document.querySelectorAll('.reveal-buttons');
             revealButtons.forEach(button => {
                 button.addEventListener('click', toggleSolution);
@@ -62,158 +204,34 @@ function loadProblem(url) {
 
         })
         .catch(error => console.error("Error loading problem:", error));
+        const match = url.match(/problem-(\d+)\.html/);
+    const problemNumber = match ? parseInt(match[1], 10) : null;
+
+    if (problemNumber !== null) {
+    const problem = problemsList.find(item => item.file === `problem-${problemNumber}.html`);
+
+    if (problem) {
+        // Check if the concept of the problem contains "graph"
+        if (problem.tags.concept.includes("graph")) {
+            console.log(`Executing code block for problem ${problemNumber} with "graph" concept.`);
+            var scriptElement = document.createElement('script');
+            
+            scriptElement.src = 'tikzjax.js';
+            scriptElement.onload = function() {
+                // Your code here that depends on tikzjax.js being loaded
+                window.onload();
+              };
+            document.body.appendChild(scriptElement);
+
+        }
+    } 
+}
 }
 
 
 function loadProblemList() {
     // Fetch the problem HTML content
-    const problemsList = [
-        {
-            title: "Problem 1",
-            file: "problem-1.html",
-            tags: {
-                difficulty: "medium",
-                concept: ["polynomials"],
-                type: "Numerical",
-            },
-        },
-        {
-            title: "Problem 2",
-            file: "problem-2.html",
-            tags: {
-                difficulty: "medium",
-                concept: ["sequenceAndSeries"],
-                type: "Numerical",
-            },
-        },
-        {
-            title: "Problem 3",
-            file: "problem-3.html",
-            tags: {
-                difficulty: "medium",
-                concept: ["trigonometry"],
-                type: "Proof",
-            },
-        },
-        {
-            title: "Problem 4",
-            file: "problem-4.html",
-            tags: {
-                difficulty: "medium",
-                concept: ["trigonometry"],
-                type: "Proof",
-            },
-        },
-        {
-            title: "Problem 5",
-            file: "problem-5.html",
-            tags: {
-                difficulty: "medium",
-                concept: ["trigonometry"],
-                type: "Numerical",
-            },
-        },
-        {
-            title: "Problem 6",
-            file: "problem-6.html",
-            tags: {
-                difficulty: "medium",
-                concept: ["trigonometry"],
-                type: "Proof",
-            },
-        },
-        {
-            title: "Problem 7",
-            file: "problem-7.html",
-            tags: {
-                difficulty: "medium",
-                concept: ["trigonometry"],
-                type: "Proof",
-            },
-        },
-        {
-            title: "Problem 8",
-            file: "problem-8.html",
-            tags: {
-                difficulty: "medium",
-                concept: ["trigonometry"],
-                type: "Proof",
-            },
-        },
-        {
-            title: "Problem 9",
-            file: "problem-9.html",
-            tags: {
-                difficulty: "medium",
-                concept: ["trigonometry"],
-                type: "Numerical",
-            },
-        },
-        {
-            title: "Problem 10",
-            file: "problem-10.html",
-            tags: {
-                difficulty: "medium",
-                concept: ["trigonometry"],
-                type: "ShortAnswer",
-            },
-        },
-        {
-            title: "Problem 11",
-            file: "problem-11.html",
-            tags: {
-                difficulty: "medium",
-                concept: ["trigonometry"],
-                type: "MCQ",
-            },
-        },
-        {
-            title: "Problem 12",
-            file: "problem-12.html",
-            tags: {
-                difficulty: "difficult",
-                concept: ["functions","calculus"],
-                type: "MSQ",
-            },
-        },
-        {
-            title: "Problem 13",
-            file: "problem-13.html",
-            tags: {
-                difficulty: "difficult",
-                concept: ["functions","trigonometry"],
-                type: "MSQ",
-            },
-        },
-        {
-            title: "Problem 14",
-            file: "problem-14.html",
-            tags: {
-                difficulty: "medium",
-                concept: ["calculus","trigonometry"],
-                type: "MCQ",
-            },
-        },
-        {
-            title: "Problem 15",
-            file: "problem-15.html",
-            tags: {
-                difficulty: "medium",
-                concept: ["calculus","functions","graph"],
-                type: "ShortAnswer",
-            },
-        },
-        {
-            title: "Problem 16",
-            file: "problem-16.html",
-            tags: {
-                difficulty: "medium",
-                concept: ["calculus"],
-                type: "ShortAnswer",
-            },
-        },
-        // Add more problems as needed
-    ];
+   
 
     const selectedDifficulty = getSelectedFilters("difficulty");
     const selectedConcepts = getSelectedFilters("concept");

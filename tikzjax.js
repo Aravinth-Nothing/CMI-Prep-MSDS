@@ -1,5 +1,3 @@
-console.log('Tikzjax Running!');
-
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -21917,6 +21915,7 @@ async function tex(input) {
 }
 
 window.onload = async function () {
+  console.log("hello");
   await load();
 
   async function process(elt) {
@@ -21955,9 +21954,9 @@ window.onload = async function () {
 
   ;
   var scripts = document.getElementsByTagName('script');
-  console.log(scripts);
   var tikzScripts = Array.prototype.slice.call(scripts).filter(e => e.getAttribute('type') === 'text/tikz');
   tikzScripts.reduce(async (promise, element) => {
+    console.log('Tikz Here Sir!')
     await promise;
     return process(element);
   }, Promise.resolve());
