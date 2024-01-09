@@ -188,6 +188,15 @@ const problemsList = [
             type: "MSQ",
         },
     },
+    {
+        title: "Problem 22",
+        file: "problem-22.html",
+        tags: {
+            difficulty: "easy",
+            concept: ["calculus","functions"],
+            type: "MCQ",
+        },
+    },
     // Add more problems as needed
 ];
 document.addEventListener("DOMContentLoaded", function () {
