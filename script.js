@@ -179,6 +179,15 @@ const problemsList = [
             type: "MCQ",
         },
     },
+    {
+        title: "Problem 21",
+        file: "problem-21.html",
+        tags: {
+            difficulty: "easy",
+            concept: ["calculus","functions"],
+            type: "MSQ",
+        },
+    },
     // Add more problems as needed
 ];
 document.addEventListener("DOMContentLoaded", function () {

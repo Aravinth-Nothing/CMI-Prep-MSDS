@@ -1,0 +1,28 @@
+<h2 id="idpl">Problem 21</h2>
+<p>
+  Consider the function $f:(-\infty,\infty) \to (-\infty,\infty)$ defined by
+$f(x) = \frac{x^2-ax+1}{x^2+ax+1} ,0\lt a \lt 2$ <br>
+Which of the following is true ?
+<br>
+a)$(2+a)^2f''(1)+(2-a)^2f''(-1)=0$ <br>
+b)$(2-a)^2f''(1)-(2+a)^2f''(-1)=0$ <br>
+c) $f'(1)f'(-1)=(2-a)^2$ <br>
+d) $f'(1)f'(-1)=-(2+a)^2$
+
+</p>
+<h2>Solution</h2>
+<button class="reveal-buttons">&#9660;</button>
+<div class="solution">
+  <p>
+    $$f'(x)=\frac{(x^2+ax+1)(2x-a)-(x^2-ax+1)(2x+a)}{(x^2+ax+1)^2}$$
+    $$=\frac{(\cancel{2x^3}+2ax^2+\cancel{2x}-ax^2-\cancel{a^2x}-a)-(\cancel{2x^3}-2ax^2+\cancel{2x}+ax^2-\cancel{a^2x}+a)}{(x^2+ax+1)^2}$$
+    $$=\frac{2a(x^2-1)}{(x^2+ax+1)^2}$$
+    $$f''(x)=\frac{(x^2+ax+1)^2(4ax)-(2ax^2-2a)2(x^2+ax+1)(2x+a)}{(x^2+ax+1)^4}$$
+    $$f''(1)=\frac{4a}{(2+a)^2}$$
+    $$f''(-1)=-\frac{4a}{(2-a)^2}$$
+    <center>Option a) $(2+a)^2f''(1)+(2-a)^2f''(-1)=0$</center>
+    $$\cancel{(2+a)^2}\frac{4a}{\cancel{(2+a)^2}}+\cancel{(2-a)^2}\frac{-4a}{\cancel{(2-a)^2}}=4a-4a=0$$
+    $$f'(1)=f'(-1)=0$$
+    <center>a) is the Correct Option.</center>
+  </p>
+</div>
