@@ -161,6 +161,24 @@ const problemsList = [
             type: "MCQ",
         },
     },
+    {
+        title: "Problem 19",
+        file: "problem-19.html",
+        tags: {
+            difficulty: "easy",
+            concept: ["calculus","functions"],
+            type: "MCQ",
+        },
+    },
+    {
+        title: "Problem 20",
+        file: "problem-20.html",
+        tags: {
+            difficulty: "easy",
+            concept: ["trigonometry","functions"],
+            type: "MCQ",
+        },
+    },
     // Add more problems as needed
 ];
 document.addEventListener("DOMContentLoaded", function () {

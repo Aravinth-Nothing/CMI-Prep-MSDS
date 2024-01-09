@@ -1,0 +1,30 @@
+<h2 id="idpl">Problem 20</h2>
+<p>Let the function $g:(-\infty,\infty)\to(-\frac{\pi}{2},\frac{\pi}{2})$ be given by $g(u)=2\tan^{-1}(e^u)-\frac{\pi}{2}$. <br>
+  Then, $g$ is, <br>
+a) even and is strictly increasing in $(0,\infty)$ <br>
+b) odd and is strictly decreasing in $(-\infty,\infty)$ <br>
+c) odd and is strictly increasing in $(-\infty,\infty)$ <br>
+d) neither even nor odd, but is strictly increasing in $(-\infty,\infty)$ <br> </p>
+<h2>Solution</h2>
+<button class="reveal-buttons">&#9660;</button>
+<div class="solution">
+  <p>
+    Checking Odd or Even, <br>
+    $$g(-u)=2\tan^{-1}(e^{-u})-\frac{\pi}{2}=2\tan^{-1}\left(\frac{1}{e^u}\right)-\frac{\pi}{2}$$
+    $$=2\cot^{-1}(e^u)-\frac{\pi}{2}$$
+    $$g(u)+g(-u)=2\tan^{-1}(e^u)-\frac{\pi}{2}+2\cot^{-1}(e^u)-\frac{\pi}{2}$$
+    Note: $\tan^{-1}x+\cot^{-1}x=\frac{\pi}{2}$
+    $$=2(\tan^{-1}(e^u)+\cot^{-1}(e^u))-\pi=2(\frac{\pi}{2})-\pi=0$$
+    $$g(u)+g(-u)=0$$
+    $$g(-u)=-g(u)$$
+    <center>$g(u)$ is an odd function.</center> <br>
+    <center>$u$ is an increasing function.</center>
+    <center>$e^u$ is an increasing function. </center>
+    <center>$\tan^{-1}(e^u)$ is an increasing function.</center>
+    <center>$2\tan^{-1}(e^u)$ is an increasing function.</center>
+    <center>$2\tan^{-1}(e^u)-\frac{\pi}{2}$ is an increasing function.</center>
+    <center>$\therefore g(u)$ is an odd and is strictly increasing in $(-\infty,\infty)$ </center>
+    <center>c) is the correct Answer.</center>
+  </p>
+</div>
+ 
