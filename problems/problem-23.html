@@ -1,0 +1,31 @@
+<h2 id="idpl">Problem 23</h2>
+<p>Let $f:\left(-\frac{\pi}{2},\frac{\pi}{2}\right)\to\mathbb{R}$ be given by 
+  $$f(x)=(\log(\sec x+\tan x))^3$$
+  Then, <br>
+  a) $f(x)$ is an odd function <br>
+  b) $f(x)$ is an one-one function <br>
+  c) $f(x)$ is an onto function <br>
+  d) $f(x)$ is an even function <br>
+</p>
+<h2>Solution</h2>
+<button class="reveal-buttons">&#9660;</button>
+<div class="solution">
+  <p>
+    Checking Even or Odd Function, <br>
+    $$f(-x)=(\log(\sec (-x)+\tan (-x)))^3=(\log(\sec x-\tan x))^3$$
+    Note: $\sec^2 x-\tan^2 x=(\sec x -\tan x)(\sec x+\tan x)=1$ <br>
+    $\sec x -\tan x = \frac{1}{\sec x +\tan x}$
+
+    $$=\left(\log\left(\frac{1}{\sec x +\tan x}\right)\right)^3=\left(\log\left(\sec x +\tan x\right)^{-1 }\right)^3=\left(-\log\left(\sec x +\tan x\right)\right)^3$$
+    $$=-\left(\log\left(\sec x +\tan x\right)\right)^3=-f(x)$$
+    <center>$f(x)$ is an odd function.</center>
+    <br>
+    <center>$\log$, $x^3$ function is a strictly increasing function.</center>
+    <center>differentiating $(\sec x +\tan x)$,</center>
+    $$\frac{d}{dx}(\sec x+\tan x)= \sec x(\sec x +\tan x)$$
+    <center>in the domain, $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$ the function, $\sec x(\sec x +\tan x) \gt 0$ </center>
+    <center>$\therefore f(x)$ is a strictly increasing function, hence an one-one Function.</center>
+    <center>$f(x)$ in range $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$ takes all values in $\mathbb{R}$, hence $f(x)$ is an onto function.</center>
+    <center>a),b),c) are the correct Options.</center>
+  </p>
+</div>

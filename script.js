@@ -197,6 +197,15 @@ const problemsList = [
             type: "MCQ",
         },
     },
+    {
+        title: "Problem 23",
+        file: "problem-23.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["trigonometry","functions"],
+            type: "MSQ",
+        },
+    },
     // Add more problems as needed
 ];
 document.addEventListener("DOMContentLoaded", function () {
