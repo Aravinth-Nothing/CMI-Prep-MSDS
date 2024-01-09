@@ -1,0 +1,46 @@
+<h2 id="idpl">Problem 24</h2>
+<p>
+  Let $f:\mathbb{R}\to\mathbb{R}$ and $g:\mathbb{R}\to\mathbb{R} $ be respectively given by, <br>
+  $f(x)=|x|+1$ <br>
+  $g(x)=x^2+1$ <br>
+  We Define $h:\mathbb{R}\to\mathbb{R}$ by $h(x)=\left\{\begin{array}{ll}
+  \max {{f(x),g(x)}} & , x \leq 0 \\
+  \min {f(x),g(x)} & , x \gt 0   
+  \end{array}\right.$ <br>
+  In how many number of points $h(x)$ is not differentiable.
+</p>
+<h2>Solution</h2>
+<button class="reveal-buttons">&#9660;</button>
+<div class="solution">
+  <p>
+    
+    <div class="tikz-container">
+      <script type="text/tikz">
+        \begin{tikzpicture}
+        % Axis
+        \draw[->] (-5,0) -- (5,0) node[below] {$x$};
+        \draw[->] (0,-1) -- (0,5) node[left] {$y$};
+      
+        % Function f(x)
+        \draw[blue, domain=-5:5, samples=100] plot (\x, {abs(\x) + 1}) node[right] {$f(x) = |x| + 1$};
+      
+        % Function g(x)
+        \draw[red, domain=-2:2, samples=100] plot (\x, {abs(\x^2) + 1}) node[right] {$g(x) = x^2 + 1$};
+      
+        % Function h(x)
+        \draw[green, domain=-2:0, samples=100] plot (\x, {max(abs(\x) + 1, abs(\x^2) + 1)});
+        \draw[green, domain=0:5, samples=100] plot (\x, {min(abs(\x) + 1, abs(\x^2) + 1)}) node[right] {$h(x)$};
+      
+        % Indicate the point of non-differentiability
+        \filldraw[black] (0, 1) circle (2pt);
+        \filldraw[black] (1, 2) circle (2pt);
+        \filldraw[black] (-1, 2) circle (2pt);
+      \end{tikzpicture}
+      </script>
+      </div>
+      The Green curve Shown (In Light Mode) in the plot above is the plot of $h(x)$.
+      <br>As we can see the slope of the curve changes drastically in 3 points. In those points the function $h(x)$ is not differentiable.
+      $$\therefore$$ the function is not differentiable at <b>3 points</b>.
+      <center>Answer: 3</center>
+   </p>
+</div>
