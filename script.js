@@ -251,6 +251,24 @@ const problemsList = [
             type: "Proof",
         },
     },
+    {
+        title: "Problem 29",
+        file: "problem-29.html",
+        tags: {
+            difficulty: "easy",
+            concept: ["logarithm","sequenceAndSeries"],
+            type: "Numerical",
+        },
+    },
+    {
+        title: "Problem 30",
+        file: "problem-30.html",
+        tags: {
+            difficulty: "easy",
+            concept: ["logarithm"],
+            type: "Proof",
+        },
+    },
     // Add more problems as needed
 ];
 document.addEventListener("DOMContentLoaded", function () {
