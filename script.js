@@ -215,6 +215,42 @@ const problemsList = [
             type: "Numerical",
         },
     },
+    {
+        title: "Problem 25",
+        file: "problem-25.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["logarithm"],
+            type: "MCQ",
+        },
+    },
+    {
+        title: "Problem 26",
+        file: "problem-26.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["logarithm","functions"],
+            type: "MCQ",
+        },
+    },
+    {
+        title: "Problem 27",
+        file: "problem-27.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["logarithm","functions"],
+            type: "MCQ",
+        },
+    },
+    {
+        title: "Problem 28",
+        file: "problem-28.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["logarithm"],
+            type: "Proof",
+        },
+    },
     // Add more problems as needed
 ];
 document.addEventListener("DOMContentLoaded", function () {
@@ -417,6 +453,7 @@ function createFilterHTML() {
                 <label><input type="checkbox" value="concept-polynomials" />Polynomials</label>
                 <label><input type="checkbox" value="concept-functions" />Functions</label>
                 <label><input type="checkbox" value="concept-graph" />Graph</label>
+                <label><input type="checkbox" value="concept-logarithm" />Logarithm</label>
                 <!-- Add more concepts as needed -->
             </div>
             <div class="filter-column">

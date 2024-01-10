@@ -1,0 +1,27 @@
+<h2 id="idpl">Problem 28</h2>
+<p> 
+  If $\frac{\log_{\frac{1}{2}} x}{b-c}=\frac{\log_{\frac{1}{2}} y}{c-a}=\frac{\log_{\frac{1}{2}} z}{a-b}$, then show that <br>
+  $$x^a y^b z^c=xyz$$
+
+</p>
+<h2>Solution</h2>
+<button class="reveal-buttons">&#9660;</button>
+<div class="solution">
+  <p>
+   Let  $$\frac{\log_{\frac{1}{2}} x}{b-c}=\frac{\log_{\frac{1}{2}} y}{c-a}=\frac{\log_{\frac{1}{2}} z}{a-b}=k$$
+   $$\log_{\frac{1}{2}} x = kb-kc$$
+   $$\log_x 2^{-1}=\frac{1}{kb-kc}$$
+   $$\log_x 2=-\frac{1}{kb-kc}$$
+   $$\log_2 x=kc-kb$$
+   $$x=2^{kc-kb}$$
+   <center>Similarly,</center>
+   $$y=2^{ka-kc}$$
+   $$z=2^{kb-ka}$$
+   $$xyz=2^{\cancel{kc}-\cancel{kb}+\cancel{ka}-\cancel{kc}+\cancel{kb}-\cancel{ka}}=2^0=1$$
+   $$xyz=1$$
+   $$x^ay^bz^c=2^{kac-kab}.2^{kab-kcb}.2^{kbc-kac}=2^{\cancel{kac}-\cancel{kab}+\cancel{kab}-\cancel{kcb}+\cancel{kcb}-\cancel{kac}}=2^0=1$$
+   $$x^ay^bz^c=1$$
+   <center>Hence Shown that,</center>
+   $$x^a y^b z^c=xyz$$ 
+  </p>
+</div>
