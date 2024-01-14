@@ -14,327 +14,23 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="prism/prism.css" />
   <link rel="stylesheet" type="text/css" href="fonts.css">
+  <link rel="icon" type="image/x-icon" href="/static/favicon_io/favicon.ico">
 
-  <style>
-
-    .main-container{
-    background-color: #FAF6F0;
-    padding: 0px;
-    width: 80ch;
-    }
-    #problem-list-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 20px;
-        list-style-type: none;
-        padding: 0;
-    }
-
-    #problem-list-container li {
-        background-color: #F4EAE0;
-        padding: 15px;
-        border-radius: 5px;
-        text-align: center;
-        border: 1px solid #F4DFC8;
-        transition: background-color 0.3s ease;
-    }
-
-    #problem-list-container li:hover {
-        background-color: #FAF6F0;
-    }
-
-    #problem-list-container a {
-        text-decoration: none;
-        color: #333;
-        display: block;
-        font-size: 1em;
-        transition: transform 0.3s ease; /* Add transition for transform */
-    }
-
-    #problem-list-container li:hover a {
-        transform: scale(1.1); /* Adjust the scaling factor as needed */
-    }
-    body {
-    padding: 0;
-    background-color: #FAF6F0;
-    display: flex;
-    overflow-y: scroll;
-  }
-
-  .fab{
-  color : #000000;
-}
-    body::-webkit-scrollbar {
-        width: 15px; 
-    }
-
-    body::-webkit-scrollbar-thumb {
-        background-color: #F4DFC8;
-    }
-
-    body::-webkit-scrollbar-track {
-        background-color: #FAF6F0; 
-    }
-    .nav-bar{
-      padding: 2rem;
-      background-color: #F4EAE0;
-      border: 1px solid #F4DFC8;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
-    .nav-table{
-      width: 100%; 
-      border:0; 
-      background-color: #F4EAE0;
-    }
-    .nav-links{
-      text-decoration: none;
-      color: #000000; 
-      font-weight: bold;
-    }
-    .nav-bar-title{
-      margin: 0px; 
-      color: #000000;
-    }
-    .hover-underline-animation {
-  display: inline-block;
-  position: relative;
-  color: #000000;
-}
-
-.hover-underline-animation::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: #000000;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-
-.hover-underline-animation:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-.solution {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 1s ease-out;
-}
-.solution.revealed {
-    max-height: 3000px;
-}
-.reveal-buttons{
-  background-color: #F4DFC8;
-  border: 0;  
-  margin-right: 3px;
-  font-size: 15px;
-  transition: font-size 0.3s ease-out;
-}
-.reveal-buttons:hover{
-  font-size: 17px;
-  border-radius: 10%;
-}
-.filter-toggle{
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.filter-container-2 {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  margin-bottom: 20px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out;
-}
-
-.filter-container-2.active {
-    max-height: 500px; /* Set the max height based on your content */
-}
-
-.filter-column {
-    flex: 1;
-}
-
-/* Updated styles to stack options vertically */
-.filter-column label {
-    display: block;
-    margin-bottom: 8px;
-}
-.tikz-container{
-      scale: 70%;
-    }
-#backButton {
-      position: fixed;
-      top: 300px; /* Adjust as needed */
-      left: 8%; /* Adjust as needed */
-      width: 30px; /* Adjust as needed */
-      height: 100px; /* Adjust as needed */
-      background-color: transparent;
-      color: rgb(0, 0, 0);
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      display: none; /* Initially hide the button */
-      
-    }
-    .back-triangle{
-      font-size: 3rem;
-    }
-    a {
-  --link-focus-outline: none;
-}
-
-.blog-img{
-  filter: invert(100%); 
-}
-input:checked + .toggle span::before {
-  background-image: url('static/moon.png');
-  width: 50%; /* Adjusted width for the image */
-  height: 50%;
-  filter: invert(100%);
-  
-}
-input:checked + .toggle{
-  background-color: #000000;
-}
-.sr-only {
-  position: absolute;
-  left: -9999px;
-  opacity: 0;
-}
-
-.toggle {
-  position: relative;
-  width: 49px; /* Adjusted width to accommodate both icons */
-  height: 24px;
-  background-color: #FAF6F0;
-  border: 2px solid #F4DFC8;
-  border-radius: 12px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  padding: 2px;
-}
-
-.toggle span {
-  position: relative;
-  display: block;
-  width: 30px; /* Adjusted width for the container */
-  height: 30px; /* Adjusted height for the container */
-  border-radius: 50%;
-  transition: transform 0.3s;
-}
-
-.toggle span::before {
-  content: "";
-  position: absolute;
-  width: 70%; /* Adjusted width for the image */
-  height: 70%; /* Adjusted height for the image */
-  background-image: url('static/sun.png'); /* Default image */
-  background-size: cover;
-  background-position: center; /* Center the background image */
-  border-radius: 50%;
-  transform: translateX(2px) translateY(4px);
-}
-
-.toggle span img {
-  width: 100%; /* Make the image fill the container */
-  height: 100%; /* Make the image fill the container */
-  border-radius: 50%;
-}
-
-input:checked + .toggle span {
-  transform: translateX(23px) translateY(2px); /* Apply the transform to .toggle span */
-}
-
-
-.dark-mode{
-  background-color: #000000;
-  color: #e0dfdc;
-}
-.dark-mode g{
-    stroke: rgb(100%,100%,100%);
-}
-.dark-mode .main-container{
-  background-color: #000000;
-}
-.dark-mode .nav-table{
-  background-color: #2d2d2d;
-}
-.dark-mode .nav-bar{
-  background-color: #2d2d2d;
-  border: 1px solid #919191;
-  border-radius: 2%;
-  box-shadow: 0 0 10px #e0dfdc;
-  color: #e0dfdc;
-}
-.dark-mode .nav-bar-title{
-  margin: 0px; 
-  color: #e0dfdc;
-}
-.dark-mode .nav-links{
-  margin: 0px; 
-  color: #e0dfdc;
-}
-.dark-mode .hover-underline-animation {
-  display: inline-block;
-  position: relative;
-  color: #e0dfdc;
-}
-.dark-mode .hover-underline-animation::after {
-  background-color: #e0dfdc;
-}
-.dark-mode .reveal-buttons{
-  background-color: #2d2d2d;
-  color: #e0dfdc;
-}
-.dark-mode #problem-list-container li{
-  background-color: #2d2d2d;
-  border: 1px solid #fafafa;
-}
-.dark-mode #problem-list-container a{
-  color: #e0dfdc;
-}
-.dark-mode #problem-list-container li:hover{
-  background-color: #000000;
-}
-.dark-mode .fab{
-  color: #e0dfdc;
-}
-.dark-mode .blog-img{
-  filter: invert(0%);
-}
-.dark-mode .back-triangle{
-      color: #e0dfdc;
-  }
-@media only screen and (max-width: 600px) {
- .mobile-control{
-  padding: 0 30px;
- }
-}
-
-  </style>
 </head>
 
 <body>
-  <a id="backButton"><p class="back-triangle">&#9664</p></a>
   <div class="main-container">
   <div class="nav-bar">
     <table class="nav-table">
       <tr> 
       <td style="border: 0; width: 50%;">
-        <a href="javascript:void(0);" onclick="loadProblem('home.html');"><h3 class="nav-bar-title">CMI Preparation</h3></a>
+        <a href="/"><h3 class="nav-bar-title">CMI Preparation</h3></a>
       </td>
       <td style="border: 0; text-align: right; width: 25%;">
-        <a href="javascript:void(0);" onclick="problemListPro();" class="nav-links hover-underline-animation">Problems</a>
+        <a href="problemList.html" class="nav-links hover-underline-animation">Problems</a>
       </td>
       <td style="border: 0; text-align: right; width: 20%;">
-        <a href="javascript:void(0);" class="nav-links hover-underline-animation" style=" margin-right: 1rem; font-weight: bold;" onclick="loadProblem('contact.html');">Contact</a>
+        <a href="contact.html" class="nav-links hover-underline-animation" style=" margin-right: 1rem; font-weight: bold;" >Contact</a>
       </td>
       <td>
         <input type="checkbox" class="sr-only" id="darkmode-toggle">
@@ -346,16 +42,19 @@ input:checked + .toggle span {
     </table>
   </div>
   <div class="mobile-control">
-  <div id="filter-container" class="filter-container">
 
-  </div>
-
-  <div id="problem-list-container">
-
-  </div>
+    
 
   <div id="body-container">
-    
+    <h1 style="font-family: 'STIX Two Text', serif; margin-top: 10rem;  text-align: center;">
+      CMI Preparation <br> M.Sc Data Science
+    </h1>
+    <p style="max-width: 33rem; text-align: center; margin: auto;">
+      I Prepare for M.Sc Data Science Entrance at CMI. <br>
+      This is the collection of Problems, that I have solved. I stored them here for my future
+      references and in hope of helping others with their CMI M.Sc Data Science Entrance preparation.
+    </p>
+  </div>
   </div>
   <div class="empty" style="height: 100px;">
 
@@ -376,7 +75,7 @@ input:checked + .toggle span {
   <script src="script.js"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script async src="prism/prism.js"></script>
-  
+  <script src="tikzjax.js"></script>
   <script async defer data-domain="latex.now.sh" src="https://plausible.io/js/plausible.js"></script>
 </body>
 

@@ -1,40 +1,129 @@
-<h2 id="tdpl">Problem 3</h2>
-<p>
-If $\frac{\cos^4A}{\cos^2B}+\frac{\sin^4A}{\sin^2B}=1$, then prove that
-<br>
-&emsp;&emsp;a) $\sin^4A+\sin^4B=2\sin^2A\sin^2B$
-&emsp;&emsp;b) $\frac{\cos^4B}{\cos^2A}+\frac{\sin^4B}{\sin^2A}=1$
-</p>
-<h2>
-Solution:
-</h2>
-<button class="reveal-buttons">&#9660;</button>
-<div class="solution">
-<p>
-Given,
-$$\frac{\cos^4A}{cos^2B}+\frac{\sin^4A}{sin^2B}=1$$
-We know that,
-$${\cos^x=1-\sin^2x}$$
-Substituting,
-$$\frac{(1-\sin^2A)^2}{1-\sin^2B}+\frac{\sin^4A}{\sin^2B}=1$$
-$$\frac{\sin^2B(1+\sin^4A-2\sin^2A)}{\sin^2B-\sin^4B}+\frac{\sin^4A-\sin^2B\sin^4A}{\sin^2B-\sin^4B}=1$$
-$$\frac{\sin^2B+\cancel{\sin^2B\sin^4A}-2\sin^2A\sin^2B+\sin^4A-\cancel{\sin^2B\sin^4A}}{\sin^2B-\sin^4B}=1$$
-$$\cancel{\sin^2B}-2\sin^2A\sin^2B+\sin^4A=\cancel{\sin^2B}-\sin^4B$$
-$$\sin^4A+\sin^4B=2\sin^2A\sin^2B  \label{one} \tag{1}
-$$
-<center>a) Hence Proved.</center>
-From \eqref{one} 
-$$\sin^4A+\sin^4B=2\sin^2A\sin^2B=0$$
-$$(\sin^2A-\sin^2B)^2=0$$
-$$\therefore \sin^2A=\sin^2B\label{two} \tag{2}$$ 
-$$1-\cos^2A=1-\cos^2B$$
-$$\cos^2A=\cos^2B\label{three} \tag{3}$$
+<!DOCTYPE html>
+<html lang="en">
 
-Substituting \eqref{two} and \eqref{three} in the original equation,
-$\frac{\cos^4A}{\cos^2B}+\frac{\sin^4A}{\sin^2B}=1$
-$$\frac{(\cos^2A)^2}{\cos^2B}+\frac{(\sin^2A)^2}{\sin^2B}=1$$
-$$\frac{\cos^4B}{\cos^2A}+\frac{\sin^4B}{\sin^2A}=1\label{four} \tag{4}$$
-<center>b) Hence Proved.</center>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/90900b5e60.js" crossorigin="anonymous"></script>
+  <title>CMI Preparation</title>
 
-</p>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/prism/prism.css" />
+  <link rel="stylesheet" type="text/css" href="/fonts.css">
+  <link rel="icon" type="image/x-icon" href="/static/favicon_io/favicon.ico">
+
+</head>
+
+<body>
+<div class="main-container">
+  <div class="nav-bar">
+    <table class="nav-table">
+      <tr> 
+        <td style="border: 0; width: 50%;">
+          <a href="/"><h3 class="nav-bar-title">CMI Preparation</h3></a>
+        </td>
+        <td style="border: 0; text-align: right; width: 25%;">
+          <a href="/problemList.html" class="nav-links hover-underline-animation">Problems</a>
+        </td>
+        <td style="border: 0; text-align: right; width: 20%;">
+          <a href="/contact.html" class="nav-links hover-underline-animation" style=" margin-right: 1rem; font-weight: bold;" >Contact</a>
+        </td>
+        <td>
+          <input type="checkbox" class="sr-only" id="darkmode-toggle">
+          <label for="darkmode-toggle" class="toggle">
+              <span></span>
+          </label>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="mobile-control">
+    <div id="body-container">
+
+
+
+
+
+
+
+   
+
+      <h2 id="tdpl">Problem 3</h2>
+      <p>
+      If $\frac{\cos^4A}{\cos^2B}+\frac{\sin^4A}{\sin^2B}=1$, then prove that
+      <br>
+      &emsp;&emsp;a) $\sin^4A+\sin^4B=2\sin^2A\sin^2B$
+      &emsp;&emsp;b) $\frac{\cos^4B}{\cos^2A}+\frac{\sin^4B}{\sin^2A}=1$
+      </p>
+      <h2>
+      Solution:
+      </h2>
+      <button class="reveal-buttons">&#9660;</button>
+      <div class="solution">
+      <p>
+      Given,
+      $$\frac{\cos^4A}{cos^2B}+\frac{\sin^4A}{sin^2B}=1$$
+      We know that,
+      $${\cos^x=1-\sin^2x}$$
+      Substituting,
+      $$\frac{(1-\sin^2A)^2}{1-\sin^2B}+\frac{\sin^4A}{\sin^2B}=1$$
+      $$\frac{\sin^2B(1+\sin^4A-2\sin^2A)}{\sin^2B-\sin^4B}+\frac{\sin^4A-\sin^2B\sin^4A}{\sin^2B-\sin^4B}=1$$
+      $$\frac{\sin^2B+\cancel{\sin^2B\sin^4A}-2\sin^2A\sin^2B+\sin^4A-\cancel{\sin^2B\sin^4A}}{\sin^2B-\sin^4B}=1$$
+      $$\cancel{\sin^2B}-2\sin^2A\sin^2B+\sin^4A=\cancel{\sin^2B}-\sin^4B$$
+      $$\sin^4A+\sin^4B=2\sin^2A\sin^2B  \label{one} \tag{1}
+      $$
+      <center>a) Hence Proved.</center>
+      From \eqref{one} 
+      $$\sin^4A+\sin^4B=2\sin^2A\sin^2B=0$$
+      $$(\sin^2A-\sin^2B)^2=0$$
+      $$\therefore \sin^2A=\sin^2B\label{two} \tag{2}$$ 
+      $$1-\cos^2A=1-\cos^2B$$
+      $$\cos^2A=\cos^2B\label{three} \tag{3}$$
+      
+      Substituting \eqref{two} and \eqref{three} in the original equation,
+      $\frac{\cos^4A}{\cos^2B}+\frac{\sin^4A}{\sin^2B}=1$
+      $$\frac{(\cos^2A)^2}{\cos^2B}+\frac{(\sin^2A)^2}{\sin^2B}=1$$
+      $$\frac{\cos^4B}{\cos^2A}+\frac{\sin^4B}{\sin^2A}=1\label{four} \tag{4}$$
+      <center>b) Hence Proved.</center>
+      
+      </p>
+      </div>
+
+
+
+    
+    
+    
+    
+    
+
+    
+    </div>
+    <div class="empty" style="height: 100px;">
+
+    </div>
+  </div>
 </div>
+<script>
+  MathJax = {
+      tex: {
+        inlineMath: [['$', '$'],],
+      },
+    }
+    
+</script>
+<script src="../script.js"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script async src="prism/prism.js"></script>
+
+<script async defer data-domain="latex.now.sh" src="https://plausible.io/js/plausible.js"></script>
+</body>
+
+</html>
+
+
+

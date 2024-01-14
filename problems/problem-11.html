@@ -1,20 +1,100 @@
-<h2 id="idpl">Problem 11</h2>
-<p>If $\sin\theta_1-\sin\theta_2=a, \cos\theta_1+\cos\theta_2=b$ then,<br>a) $a^2+b^2\geq 4$<br>b) $a^2+b^2\leq 4$<br>c) $a^2+b^2\geq 3$<br>d) $a^2+b^2\leq 2$</p>
-<h2>Solution</h2>
-<button class="reveal-buttons">&#9660;</button>
-<div class="solution">
-  <p>
-    Squaring given equations,
-    $$a^2=\sin^2\theta_1+\sin^2\theta_2-2\sin\theta_1\sin\theta_2 \label{one}\tag{1}$$
-    $$b^2=\cos^2\theta_1+\cos^2\theta_2+2\cos\theta_1\cos\theta_2 \label{two}\tag{2}$$
-    $$a^2+b^2=(\sin^2\theta_1+\cos^2\theta_1)+(\sin^2\theta_2+\cos^2\theta_2)-2\sin\theta_1\sin\theta_2+2\cos\theta_1\cos\theta_2$$
-    Note: $\sin^2\theta+\cos^2\theta=1$
-    $$a^2+b^2=1+1+2(\cos\theta_1\cos\theta_2-\sin\theta_1\sin\theta_2)$$
-    $$a^2+b^2=2+2(\cos(\theta_1-\theta_2))$$
-    Minimum value of $\cos(\theta_1-\theta_2)=-1$: <br>
-    Hence the Minimum value of $a^2+b^2 = 2+2(-1) =2-2 =0$ <br>
-    Maximum value of $\cos(\theta_1-\theta_2)=1$: <br>
-    Hence the Maximum value of $a^2+b^2 = 2+2(1) =2+2 =4$
-    <center>Hence b) $a^2+b^2\leq 4$ is the Correct answer.</center>
-  </p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/90900b5e60.js" crossorigin="anonymous"></script>
+  <title>CMI Preparation</title>
+
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/prism/prism.css" />
+  <link rel="stylesheet" type="text/css" href="/fonts.css">
+  <link rel="icon" type="image/x-icon" href="/static/favicon_io/favicon.ico">
+
+</head>
+
+<body>
+<div class="main-container">
+  <div class="nav-bar">
+    <table class="nav-table">
+      <tr> 
+        <td style="border: 0; width: 50%;">
+          <a href="/"><h3 class="nav-bar-title">CMI Preparation</h3></a>
+        </td>
+        <td style="border: 0; text-align: right; width: 25%;">
+          <a href="/problemList.html" class="nav-links hover-underline-animation">Problems</a>
+        </td>
+        <td style="border: 0; text-align: right; width: 20%;">
+          <a href="/contact.html" class="nav-links hover-underline-animation" style=" margin-right: 1rem; font-weight: bold;" >Contact</a>
+        </td>
+        <td>
+          <input type="checkbox" class="sr-only" id="darkmode-toggle">
+          <label for="darkmode-toggle" class="toggle">
+              <span></span>
+          </label>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="mobile-control">
+    <div id="body-container">
+
+
+
+
+
+      <h2 id="idpl">Problem 11</h2>
+      <p>If $\sin\theta_1-\sin\theta_2=a, \cos\theta_1+\cos\theta_2=b$ then,<br>a) $a^2+b^2\geq 4$<br>b) $a^2+b^2\leq 4$<br>c) $a^2+b^2\geq 3$<br>d) $a^2+b^2\leq 2$</p>
+      <h2>Solution</h2>
+      <button class="reveal-buttons">&#9660;</button>
+      <div class="solution">
+        <p>
+          Squaring given equations,
+          $$a^2=\sin^2\theta_1+\sin^2\theta_2-2\sin\theta_1\sin\theta_2 \label{one}\tag{1}$$
+          $$b^2=\cos^2\theta_1+\cos^2\theta_2+2\cos\theta_1\cos\theta_2 \label{two}\tag{2}$$
+          $$a^2+b^2=(\sin^2\theta_1+\cos^2\theta_1)+(\sin^2\theta_2+\cos^2\theta_2)-2\sin\theta_1\sin\theta_2+2\cos\theta_1\cos\theta_2$$
+          Note: $\sin^2\theta+\cos^2\theta=1$
+          $$a^2+b^2=1+1+2(\cos\theta_1\cos\theta_2-\sin\theta_1\sin\theta_2)$$
+          $$a^2+b^2=2+2(\cos(\theta_1-\theta_2))$$
+          Minimum value of $\cos(\theta_1-\theta_2)=-1$: <br>
+          Hence the Minimum value of $a^2+b^2 = 2+2(-1) =2-2 =0$ <br>
+          Maximum value of $\cos(\theta_1-\theta_2)=1$: <br>
+          Hence the Maximum value of $a^2+b^2 = 2+2(1) =2+2 =4$
+          <center>Hence b) $a^2+b^2\leq 4$ is the Correct answer.</center>
+        </p>
+      </div>
+
+    
+    
+
+    
+    </div>
+    <div class="empty" style="height: 100px;">
+
+    </div>
+  </div>
 </div>
+<script>
+  MathJax = {
+      tex: {
+        inlineMath: [['$', '$'],],
+      },
+    }
+    
+</script>
+<script src="../script.js"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script async src="prism/prism.js"></script>
+
+<script async defer data-domain="latex.now.sh" src="https://plausible.io/js/plausible.js"></script>
+</body>
+
+</html>
+
+
+

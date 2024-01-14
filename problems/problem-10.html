@@ -1,19 +1,100 @@
-<h2 id="idpl">Problem 10</h2>
-<p>If $f(\theta)=5\cos\theta+3\cos(\theta+\frac{\pi}{3})+3$, find the range of $f(\theta)$</p>
-<h2>Solution</h2>
-<button class="reveal-buttons">&#9660;</button>
-<div class="solution">
-  <p>
-    Given Equation,
-    $$=5\cos\theta+3\left(\cos\theta\cos\frac{\pi}{3}-\sin\theta\sin\frac{\pi}{3}\right)+3$$
-    $$=5\cos\theta+\frac{3\cos\theta}{2}-\frac{3\sqrt{3}\sin\theta}{2}+3$$
-    $$=\frac{13\cos\theta}{2}-\frac{-3\sqrt{3}\sin\theta}{2}+3$$
-    Note: Range of a function of form: $a\sin x+b\cos x$ is $[-\sqrt{a^2+b^2},\sqrt{a^2+b^2}]$
-    <br>In this case, $a=\frac{13}{2}, b=\frac{-3\sqrt{3}}{2}$
-    $$\sqrt{a^2+b^2}=\sqrt{\left(\frac{13}{2}\right)^2+\left(\frac{-3\sqrt{3}}{2}\right)^2}$$
-    $$=\sqrt{\frac{169+27}{4}}=\sqrt{\frac{196}{4}}=\frac{14}{2}=\pm7$$
-    Range of $\frac{13\cos\theta}{2}-\frac{-3\sqrt{3}\sin\theta}{2}$ is [-7,7] <br>
-    <center>$\therefore$ Range of $\frac{13\cos\theta}{2}-\frac{-3\sqrt{3}\sin\theta}{2}+3$ is</center>
-     $$[-4,10]$$
-  </p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/90900b5e60.js" crossorigin="anonymous"></script>
+  <title>CMI Preparation</title>
+
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/prism/prism.css" />
+  <link rel="stylesheet" type="text/css" href="/fonts.css">
+  <link rel="icon" type="image/x-icon" href="/static/favicon_io/favicon.ico">
+
+</head>
+
+<body>
+<div class="main-container">
+  <div class="nav-bar">
+    <table class="nav-table">
+      <tr> 
+        <td style="border: 0; width: 50%;">
+          <a href="/"><h3 class="nav-bar-title">CMI Preparation</h3></a>
+        </td>
+        <td style="border: 0; text-align: right; width: 25%;">
+          <a href="/problemList.html" class="nav-links hover-underline-animation">Problems</a>
+        </td>
+        <td style="border: 0; text-align: right; width: 20%;">
+          <a href="/contact.html" class="nav-links hover-underline-animation" style=" margin-right: 1rem; font-weight: bold;" >Contact</a>
+        </td>
+        <td>
+          <input type="checkbox" class="sr-only" id="darkmode-toggle">
+          <label for="darkmode-toggle" class="toggle">
+              <span></span>
+          </label>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="mobile-control">
+    <div id="body-container">
+
+
+
+
+
+
+      <h2 id="idpl">Problem 10</h2>
+      <p>If $f(\theta)=5\cos\theta+3\cos(\theta+\frac{\pi}{3})+3$, find the range of $f(\theta)$</p>
+      <h2>Solution</h2>
+      <button class="reveal-buttons">&#9660;</button>
+      <div class="solution">
+        <p>
+          Given Equation,
+          $$=5\cos\theta+3\left(\cos\theta\cos\frac{\pi}{3}-\sin\theta\sin\frac{\pi}{3}\right)+3$$
+          $$=5\cos\theta+\frac{3\cos\theta}{2}-\frac{3\sqrt{3}\sin\theta}{2}+3$$
+          $$=\frac{13\cos\theta}{2}-\frac{-3\sqrt{3}\sin\theta}{2}+3$$
+          Note: Range of a function of form: $a\sin x+b\cos x$ is $[-\sqrt{a^2+b^2},\sqrt{a^2+b^2}]$
+          <br>In this case, $a=\frac{13}{2}, b=\frac{-3\sqrt{3}}{2}$
+          $$\sqrt{a^2+b^2}=\sqrt{\left(\frac{13}{2}\right)^2+\left(\frac{-3\sqrt{3}}{2}\right)^2}$$
+          $$=\sqrt{\frac{169+27}{4}}=\sqrt{\frac{196}{4}}=\frac{14}{2}=\pm7$$
+          Range of $\frac{13\cos\theta}{2}-\frac{-3\sqrt{3}\sin\theta}{2}$ is [-7,7] <br>
+          <center>$\therefore$ Range of $\frac{13\cos\theta}{2}-\frac{-3\sqrt{3}\sin\theta}{2}+3$ is</center>
+           $$[-4,10]$$
+        </p>
+      </div>
+
+    
+    
+
+    
+    </div>
+    <div class="empty" style="height: 100px;">
+
+    </div>
+  </div>
 </div>
+<script>
+  MathJax = {
+      tex: {
+        inlineMath: [['$', '$'],],
+      },
+    }
+    
+</script>
+<script src="../script.js"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script async src="prism/prism.js"></script>
+
+<script async defer data-domain="latex.now.sh" src="https://plausible.io/js/plausible.js"></script>
+</body>
+
+</html>
+
+
+

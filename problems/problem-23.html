@@ -1,31 +1,113 @@
-<h2 id="idpl">Problem 23</h2>
-<p>Let $f:\left(-\frac{\pi}{2},\frac{\pi}{2}\right)\to\mathbb{R}$ be given by 
-  $$f(x)=(\log(\sec x+\tan x))^3$$
-  Then, <br>
-  a) $f(x)$ is an odd function <br>
-  b) $f(x)$ is an one-one function <br>
-  c) $f(x)$ is an onto function <br>
-  d) $f(x)$ is an even function <br>
-</p>
-<h2>Solution</h2>
-<button class="reveal-buttons">&#9660;</button>
-<div class="solution">
-  <p>
-    Checking Even or Odd Function, <br>
-    $$f(-x)=(\log(\sec (-x)+\tan (-x)))^3=(\log(\sec x-\tan x))^3$$
-    Note: $\sec^2 x-\tan^2 x=(\sec x -\tan x)(\sec x+\tan x)=1$ <br>
-    $\sec x -\tan x = \frac{1}{\sec x +\tan x}$
+<!DOCTYPE html>
+<html lang="en">
 
-    $$=\left(\log\left(\frac{1}{\sec x +\tan x}\right)\right)^3=\left(\log\left(\sec x +\tan x\right)^{-1 }\right)^3=\left(-\log\left(\sec x +\tan x\right)\right)^3$$
-    $$=-\left(\log\left(\sec x +\tan x\right)\right)^3=-f(x)$$
-    <center>$f(x)$ is an odd function.</center>
-    <br>
-    <center>$\log$, $x^3$ function is a strictly increasing function.</center>
-    <center>differentiating $(\sec x +\tan x)$,</center>
-    $$\frac{d}{dx}(\sec x+\tan x)= \sec x(\sec x +\tan x)$$
-    <center>in the domain, $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$ the function, $\sec x(\sec x +\tan x) \gt 0$ </center>
-    <center>$\therefore f(x)$ is a strictly increasing function, hence an one-one Function.</center>
-    <center>$f(x)$ in range $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$ takes all values in $\mathbb{R}$, hence $f(x)$ is an onto function.</center>
-    <center>a),b),c) are the correct Options.</center>
-  </p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/90900b5e60.js" crossorigin="anonymous"></script>
+  <title>CMI Preparation</title>
+
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/prism/prism.css" />
+  <link rel="stylesheet" type="text/css" href="/fonts.css">
+  <link rel="icon" type="image/x-icon" href="/static/favicon_io/favicon.ico">
+
+</head>
+
+<body>
+<div class="main-container">
+  <div class="nav-bar">
+    <table class="nav-table">
+      <tr> 
+        <td style="border: 0; width: 50%;">
+          <a href="/"><h3 class="nav-bar-title">CMI Preparation</h3></a>
+        </td>
+        <td style="border: 0; text-align: right; width: 25%;">
+          <a href="/problemList.html" class="nav-links hover-underline-animation">Problems</a>
+        </td>
+        <td style="border: 0; text-align: right; width: 20%;">
+          <a href="/contact.html" class="nav-links hover-underline-animation" style=" margin-right: 1rem; font-weight: bold;" >Contact</a>
+        </td>
+        <td>
+          <input type="checkbox" class="sr-only" id="darkmode-toggle">
+          <label for="darkmode-toggle" class="toggle">
+              <span></span>
+          </label>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="mobile-control">
+    <div id="body-container">
+
+
+
+
+
+      <h2 id="idpl">Problem 23</h2>
+      <p>Let $f:\left(-\frac{\pi}{2},\frac{\pi}{2}\right)\to\mathbb{R}$ be given by 
+        $$f(x)=(\log(\sec x+\tan x))^3$$
+        Then, <br>
+        a) $f(x)$ is an odd function <br>
+        b) $f(x)$ is an one-one function <br>
+        c) $f(x)$ is an onto function <br>
+        d) $f(x)$ is an even function <br>
+      </p>
+      <h2>Solution</h2>
+      <button class="reveal-buttons">&#9660;</button>
+      <div class="solution">
+        <p>
+          Checking Even or Odd Function, <br>
+          $$f(-x)=(\log(\sec (-x)+\tan (-x)))^3=(\log(\sec x-\tan x))^3$$
+          Note: $\sec^2 x-\tan^2 x=(\sec x -\tan x)(\sec x+\tan x)=1$ <br>
+          $\sec x -\tan x = \frac{1}{\sec x +\tan x}$
+      
+          $$=\left(\log\left(\frac{1}{\sec x +\tan x}\right)\right)^3=\left(\log\left(\sec x +\tan x\right)^{-1 }\right)^3=\left(-\log\left(\sec x +\tan x\right)\right)^3$$
+          $$=-\left(\log\left(\sec x +\tan x\right)\right)^3=-f(x)$$
+          <center>$f(x)$ is an odd function.</center>
+          <br>
+          <center>$\log$, $x^3$ function is a strictly increasing function.</center>
+          <center>differentiating $(\sec x +\tan x)$,</center>
+          $$\frac{d}{dx}(\sec x+\tan x)= \sec x(\sec x +\tan x)$$
+          <center>in the domain, $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$ the function, $\sec x(\sec x +\tan x) \gt 0$ </center>
+          <center>$\therefore f(x)$ is a strictly increasing function, hence an one-one Function.</center>
+          <center>$f(x)$ in range $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$ takes all values in $\mathbb{R}$, hence $f(x)$ is an onto function.</center>
+          <center>a),b),c) are the correct Options.</center>
+        </p>
+      </div>
+
+            
+
+    
+    
+
+    
+    </div>
+    <div class="empty" style="height: 100px;">
+
+    </div>
+  </div>
 </div>
+<script>
+  MathJax = {
+      tex: {
+        inlineMath: [['$', '$'],],
+      },
+    }
+    
+</script>
+<script src="../script.js"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script async src="prism/prism.js"></script>
+<script src="tikzjax.js"></script>
+<script async defer data-domain="latex.now.sh" src="https://plausible.io/js/plausible.js"></script>
+</body>
+
+</html>
+
+
+

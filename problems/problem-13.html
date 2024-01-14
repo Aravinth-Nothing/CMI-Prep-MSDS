@@ -1,53 +1,133 @@
-<h2 id="idpl">Problem 13</h2>
-<p>
-  Let $f(x)=\sin\left(\frac{\pi}{6}\sin\left(\frac{\pi}{2}\sin(x)\right)\right)\forall x\in \mathbb{R}$ and $g(x)=\frac{\pi}{2}\sin x \forall x \in \mathbb{R}$ <br>
-  Let $(f \circ g)(x)$ denote $f(g(x))$ and $(g \circ f)(x)$ denote $g(f(x))$ then which <br> of the following is/are true? <br>
-  a) Range of $f$ is $\left[-\frac{1}{2},\frac{1}{2}\right]$ <br>
-  b) Range of $f \circ g$ is $\left[-\frac{1}{2},\frac{1}{2}\right]$ <br>
-  c) $\displaystyle\lim_{x\to 0} \frac{f(x)}{g(x)}=\frac{\pi}{6}$ <br>
-  d) There is an $x\in\mathbb{R}$ such that $(g\circ f)(x)=1$ 
+<!DOCTYPE html>
+<html lang="en">
 
-</p>
-<h2>Solution</h2>
-<button class="reveal-buttons">&#9660;</button>
-<div class="solution">
-  <p>
-    Let's check options one by one: <br>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/90900b5e60.js" crossorigin="anonymous"></script>
+  <title>CMI Preparation</title>
 
-    a) Range of $f$ is $\left[-\frac{1}{2},\frac{1}{2}\right]$
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/prism/prism.css" />
+  <link rel="stylesheet" type="text/css" href="/fonts.css">
+  <link rel="icon" type="image/x-icon" href="/static/favicon_io/favicon.ico">
 
-    <center>Range of $\sin x \to [-1,1]$</center>
-    <center>Range of $\frac{\pi}{2}\sin x \to [-\frac{\pi}{2},\frac{\pi}{2}]$</center>
-    <center>Range of $\sin\left(\frac{\pi}{2}\sin x\right) \to [-1,1]$</center>
-    <center>Range of $\frac{\pi}{6}\sin\left(\frac{\pi}{2}\sin x\right) \to [-\frac{\pi}{6},\frac{\pi}{6}]$</center>
-    <center>Range of $\sin\left(\frac{\pi}{6}\sin\left(\frac{\pi}{2}\sin x\right)\right) \to [-\frac{1}{2},\frac{1}{2}]$</center>
-    <center>a) Range of $f$ is $\left[-\frac{1}{2},\frac{1}{2}\right]$ is correct.</center>
-<br>
-b) Range of $f \circ g$ is $\left[-\frac{1}{2},\frac{1}{2}\right]$ <br>
-    $f \circ g = f(g(x)) = \sin\left(\frac{\pi}{6}\sin\left(\frac{\pi}{2}\sin \left(\frac{\pi}{2}\sin x\right)\right)\right)$
-    <center>Range of $\sin x \to [-1,1]$</center>
-    <center>Range of $\frac{\pi}{2}\sin x \to [-\frac{\pi}{2},\frac{\pi}{2}]$</center>
-    <center>Range of $\sin\left(\frac{\pi}{2}\sin x\right) \to [-1,1]$</center>
-    <center>Range of $\frac{\pi}{2}\sin\left(\frac{\pi}{2}\sin x\right) \to [-\frac{\pi}{2},\frac{\pi}{2}]$</center>
-    <center>Range of $\sin\left(\frac{\pi}{2}\sin\left(\frac{\pi}{2}\sin x\right)\right) \to [-1,1]$</center>
-    <center>Range of $\frac{\pi}{6}\left(\sin\left(\frac{\pi}{2}\sin\left(\frac{\pi}{2}\sin x\right)\right)\right) \to [-\frac{\pi}{6},\frac{\pi}{6}]$</center>
-    <center>Range of $\sin\left(\frac{\pi}{6}\left(\sin\left(\frac{\pi}{2}\sin\left(\frac{\pi}{2}\sin x\right)\right)\right)\right) \to [-\frac{1}{2},\frac{1}{2}]$</center>
-    <center>b) Range of $f \circ g$ is $\left[-\frac{1}{2},\frac{1}{2}\right]$ is correct.</center>
-    <br>
-c) $\displaystyle\lim_{x\to 0} \frac{f(x)}{g(x)}=\frac{\pi}{6}$ <br>
-    <center>$\displaystyle\lim_{x\to 0} \frac{f(x)}{g(x)}=\displaystyle\lim_{x\to 0} \frac{\sin\left(\frac{\pi}{6}\sin\left(\frac{\pi}{2}\sin(x)\right)\right)}{\frac{\pi}{2}\sin x}$</center>
-    <center>$\displaystyle\lim_{x\to 0}\frac{f'(x)}{g'(x)}=\displaystyle\lim_{x\to 0}\frac{\cos\left(\frac{\pi}{6}\left(\sin\left(\frac{\pi}{2}\sin x\right)\right)\right . \frac{\pi}{6}\cos\left(\frac{\pi}{2}\sin x\right)).\frac{\pi}{2}\cos x}{\frac{\pi}{2}\cos x}$</center>
-    <center>$\frac{f'(x)}{g'(x)}=\displaystyle\lim_{x\to 0}\frac{\cos\left(\frac{\pi}{6}\left(\sin\left(\frac{\pi}{2}\sin 0\right)\right)\right . \frac{\pi}{6}\cos\left(\frac{\pi}{2}\sin 0\right)).\frac{\pi}{2}\cos 0}{\frac{\pi}{2}\cos 0}$</center>
-    <center>$=\cos(0).\frac{\pi}{6}.\cos(0)$</center> <br>
-    <center>c)$\displaystyle\lim_{x\to 0} \frac{f(x)}{g(x)}=\frac{\pi}{6}$ is correct.</center> 
-<br>
-d) There is an $x\in\mathbb{R}$ such that $(g\circ f)(x)=1$ 
-    <center>$(g\circ f)=g(f(x))$</center>
-    <center>Range of $g(f(x)) \to g($Range of $f(x))\to g\left(\left[-\frac{1}{2},\frac{1}{2}\right]\right)\to\frac{\pi}{2}\sin\left(\left[-\frac{1}{2},\frac{1}{2}\right]\right)$</center>
-    <center>Range of $g(f(x))\to\left[-\frac{\pi}{2}\sin\left(\frac{1}{2}\right),\frac{\pi}{2}\sin\left(\frac{1}{2}\right)\right]\to (-0.75,0.75)$</center>
-    <center>$\therefore g \circ f \neq 1   \forall x$</center>
-    <center>d) There is an $x\in\mathbb{R}$ such that $(g\circ f)(x)=1$ is wrong.</center>
-    <br>
-    <center>(a),(b),(c) is Correct.</center>
-  </p>
+</head>
+
+<body>
+<div class="main-container">
+  <div class="nav-bar">
+    <table class="nav-table">
+      <tr> 
+        <td style="border: 0; width: 50%;">
+          <a href="/"><h3 class="nav-bar-title">CMI Preparation</h3></a>
+        </td>
+        <td style="border: 0; text-align: right; width: 25%;">
+          <a href="/problemList.html" class="nav-links hover-underline-animation">Problems</a>
+        </td>
+        <td style="border: 0; text-align: right; width: 20%;">
+          <a href="/contact.html" class="nav-links hover-underline-animation" style=" margin-right: 1rem; font-weight: bold;" >Contact</a>
+        </td>
+        <td>
+          <input type="checkbox" class="sr-only" id="darkmode-toggle">
+          <label for="darkmode-toggle" class="toggle">
+              <span></span>
+          </label>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="mobile-control">
+    <div id="body-container">
+
+
+
+
+      <h2 id="idpl">Problem 13</h2>
+      <p>
+        Let $f(x)=\sin\left(\frac{\pi}{6}\sin\left(\frac{\pi}{2}\sin(x)\right)\right)\forall x\in \mathbb{R}$ and $g(x)=\frac{\pi}{2}\sin x \forall x \in \mathbb{R}$ <br>
+        Let $(f \circ g)(x)$ denote $f(g(x))$ and $(g \circ f)(x)$ denote $g(f(x))$ then which <br> of the following is/are true? <br>
+        a) Range of $f$ is $\left[-\frac{1}{2},\frac{1}{2}\right]$ <br>
+        b) Range of $f \circ g$ is $\left[-\frac{1}{2},\frac{1}{2}\right]$ <br>
+        c) $\displaystyle\lim_{x\to 0} \frac{f(x)}{g(x)}=\frac{\pi}{6}$ <br>
+        d) There is an $x\in\mathbb{R}$ such that $(g\circ f)(x)=1$ 
+      
+      </p>
+      <h2>Solution</h2>
+      <button class="reveal-buttons">&#9660;</button>
+      <div class="solution">
+        <p>
+          Let's check options one by one: <br>
+      
+          a) Range of $f$ is $\left[-\frac{1}{2},\frac{1}{2}\right]$
+      
+          <center>Range of $\sin x \to [-1,1]$</center>
+          <center>Range of $\frac{\pi}{2}\sin x \to [-\frac{\pi}{2},\frac{\pi}{2}]$</center>
+          <center>Range of $\sin\left(\frac{\pi}{2}\sin x\right) \to [-1,1]$</center>
+          <center>Range of $\frac{\pi}{6}\sin\left(\frac{\pi}{2}\sin x\right) \to [-\frac{\pi}{6},\frac{\pi}{6}]$</center>
+          <center>Range of $\sin\left(\frac{\pi}{6}\sin\left(\frac{\pi}{2}\sin x\right)\right) \to [-\frac{1}{2},\frac{1}{2}]$</center>
+          <center>a) Range of $f$ is $\left[-\frac{1}{2},\frac{1}{2}\right]$ is correct.</center>
+      <br>
+      b) Range of $f \circ g$ is $\left[-\frac{1}{2},\frac{1}{2}\right]$ <br>
+          $f \circ g = f(g(x)) = \sin\left(\frac{\pi}{6}\sin\left(\frac{\pi}{2}\sin \left(\frac{\pi}{2}\sin x\right)\right)\right)$
+          <center>Range of $\sin x \to [-1,1]$</center>
+          <center>Range of $\frac{\pi}{2}\sin x \to [-\frac{\pi}{2},\frac{\pi}{2}]$</center>
+          <center>Range of $\sin\left(\frac{\pi}{2}\sin x\right) \to [-1,1]$</center>
+          <center>Range of $\frac{\pi}{2}\sin\left(\frac{\pi}{2}\sin x\right) \to [-\frac{\pi}{2},\frac{\pi}{2}]$</center>
+          <center>Range of $\sin\left(\frac{\pi}{2}\sin\left(\frac{\pi}{2}\sin x\right)\right) \to [-1,1]$</center>
+          <center>Range of $\frac{\pi}{6}\left(\sin\left(\frac{\pi}{2}\sin\left(\frac{\pi}{2}\sin x\right)\right)\right) \to [-\frac{\pi}{6},\frac{\pi}{6}]$</center>
+          <center>Range of $\sin\left(\frac{\pi}{6}\left(\sin\left(\frac{\pi}{2}\sin\left(\frac{\pi}{2}\sin x\right)\right)\right)\right) \to [-\frac{1}{2},\frac{1}{2}]$</center>
+          <center>b) Range of $f \circ g$ is $\left[-\frac{1}{2},\frac{1}{2}\right]$ is correct.</center>
+          <br>
+      c) $\displaystyle\lim_{x\to 0} \frac{f(x)}{g(x)}=\frac{\pi}{6}$ <br>
+          <center>$\displaystyle\lim_{x\to 0} \frac{f(x)}{g(x)}=\displaystyle\lim_{x\to 0} \frac{\sin\left(\frac{\pi}{6}\sin\left(\frac{\pi}{2}\sin(x)\right)\right)}{\frac{\pi}{2}\sin x}$</center>
+          <center>$\displaystyle\lim_{x\to 0}\frac{f'(x)}{g'(x)}=\displaystyle\lim_{x\to 0}\frac{\cos\left(\frac{\pi}{6}\left(\sin\left(\frac{\pi}{2}\sin x\right)\right)\right . \frac{\pi}{6}\cos\left(\frac{\pi}{2}\sin x\right)).\frac{\pi}{2}\cos x}{\frac{\pi}{2}\cos x}$</center>
+          <center>$\frac{f'(x)}{g'(x)}=\displaystyle\lim_{x\to 0}\frac{\cos\left(\frac{\pi}{6}\left(\sin\left(\frac{\pi}{2}\sin 0\right)\right)\right . \frac{\pi}{6}\cos\left(\frac{\pi}{2}\sin 0\right)).\frac{\pi}{2}\cos 0}{\frac{\pi}{2}\cos 0}$</center>
+          <center>$=\cos(0).\frac{\pi}{6}.\cos(0)$</center> <br>
+          <center>c)$\displaystyle\lim_{x\to 0} \frac{f(x)}{g(x)}=\frac{\pi}{6}$ is correct.</center> 
+      <br>
+      d) There is an $x\in\mathbb{R}$ such that $(g\circ f)(x)=1$ 
+          <center>$(g\circ f)=g(f(x))$</center>
+          <center>Range of $g(f(x)) \to g($Range of $f(x))\to g\left(\left[-\frac{1}{2},\frac{1}{2}\right]\right)\to\frac{\pi}{2}\sin\left(\left[-\frac{1}{2},\frac{1}{2}\right]\right)$</center>
+          <center>Range of $g(f(x))\to\left[-\frac{\pi}{2}\sin\left(\frac{1}{2}\right),\frac{\pi}{2}\sin\left(\frac{1}{2}\right)\right]\to (-0.75,0.75)$</center>
+          <center>$\therefore g \circ f \neq 1   \forall x$</center>
+          <center>d) There is an $x\in\mathbb{R}$ such that $(g\circ f)(x)=1$ is wrong.</center>
+          <br>
+          <center>(a),(b),(c) is Correct.</center>
+        </p>
+      </div>
+      
+
+    
+    
+
+    
+    </div>
+    <div class="empty" style="height: 100px;">
+
+    </div>
+  </div>
 </div>
+<script>
+  MathJax = {
+      tex: {
+        inlineMath: [['$', '$'],],
+      },
+    }
+    
+</script>
+<script src="../script.js"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script async src="prism/prism.js"></script>
+
+<script async defer data-domain="latex.now.sh" src="https://plausible.io/js/plausible.js"></script>
+</body>
+
+</html>
+
+
+

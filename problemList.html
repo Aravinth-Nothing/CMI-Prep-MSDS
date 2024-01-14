@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/90900b5e60.js" crossorigin="anonymous"></script>
+  <title>CMI Preparation</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="prism/prism.css" />
+  <link rel="stylesheet" type="text/css" href="fonts.css">
+  <link rel="icon" type="image/x-icon" href="/static/favicon_io/favicon.ico">
+</head>
+
+<body>
+  <div class="main-container">
+  <div class="nav-bar">
+    <table class="nav-table">
+      <tr> 
+      <td style="border: 0; width: 50%;">
+        <a href="/"><h3 class="nav-bar-title">CMI Preparation</h3></a>
+      </td>
+      <td style="border: 0; text-align: right; width: 25%;">
+        <a href="javascript:void(0);" onclick="problemListPro();" class="nav-links hover-underline-animation">Problems</a>
+      </td>
+      <td style="border: 0; text-align: right; width: 20%;">
+        <a href="contact.html" class="nav-links hover-underline-animation" style=" margin-right: 1rem; font-weight: bold;" >Contact</a>
+      </td>
+      <td>
+        <input type="checkbox" class="sr-only" id="darkmode-toggle">
+<label for="darkmode-toggle" class="toggle">
+  <span></span>
+</label>
+      </td>
+      </tr>
+    </table>
+  </div>
+  <div class="mobile-control">
+  <div id="filter-container" class="filter-container">
+
+  </div>
+
+  <div id="problem-list-container">
+
+  </div>
+
+  <div id="body-container">
+    
+  </div>
+  <div class="empty" style="height: 100px;">
+
+  </div>
+</div>
+</div>
+  <script>
+    
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'],],
+      },
+    }
+    
+    document.addEventListener("DOMContentLoaded", function () {
+        problemListPro();
+    });
+
+    function loadProblemList() {
+    // Fetch the problem HTML content
+   
+
+    const selectedDifficulty = getSelectedFilters("difficulty");
+    const selectedConcepts = getSelectedFilters("concept");
+    const selectedTypes = getSelectedFilters("type");
+
+    // Filter problems based on selected filters
+    const filteredProblems = problemsList.filter(problem => {
+        return (
+            (selectedDifficulty.length === 0 || selectedDifficulty.includes(problem.tags.difficulty)) &&
+            (selectedConcepts.length === 0 || selectedConcepts.some(concept => problem.tags.concept.includes(concept))) &&
+            (selectedTypes.length === 0 || selectedTypes.includes(problem.tags.type))
+        );
+    });
+    // Update the HTML with the list of problems
+    const problemListContainer = document.getElementById("problem-list-container");
+    const bodyContainer = document.getElementById("body-container");
+    bodyContainer.innerHTML = '';
+    problemListContainer.style.marginTop = '0rem';
+    problemListContainer.innerHTML = ''; // Clear existing content
+
+    
+
+    filteredProblems.forEach(problem => {
+        const listItem = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = `problems/${problem.file}`;
+        link.textContent = problem.title;
+        listItem.appendChild(link);
+        problemListContainer.appendChild(listItem);
+    });
+
+    pageHistory.push("problem-list");
+
+}
+    
+function createFilterHTML() {
+    return `
+        <center><h3>Filter</h3><center>
+        <div class="filter-toggle">
+            <button class="filter-toggle-button reveal-buttons" onclick="toggleFilter();">&#9660;</button>
+        </div>
+        <div class="filter-container  filter-container-2">
+            <div class="filter-column">
+                <h4>Difficulty</h4>
+                <label><input type="checkbox" value="difficulty-easy" /> Easy</label>
+                <label><input type="checkbox" value="difficulty-medium" /> Medium</label>
+                <label><input type="checkbox" value="difficulty-hard" /> Hard</label>
+            </div>
+            <div class="filter-column">
+                <h4>Concept</h4>
+                <label><input type="checkbox" value="concept-trigonometry" /> Trigonometry</label>
+                <label><input type="checkbox" value="concept-calculus" /> Calculus</label>
+                <label><input type="checkbox" value="concept-sequenceAndSeries" /> Sequence And Series</label>
+                <label><input type="checkbox" value="concept-polynomials" />Polynomials</label>
+                <label><input type="checkbox" value="concept-functions" />Functions</label>
+                <label><input type="checkbox" value="concept-graph" />Graph</label>
+                <label><input type="checkbox" value="concept-logarithm" />Logarithm</label>
+                <!-- Add more concepts as needed -->
+            </div>
+            <div class="filter-column">
+                <h4>Type</h4>
+                <label><input type="checkbox" value="type-MCQ" /> MCQ</label>
+                <label><input type="checkbox" value="type-MSQ" /> MSQ</label>
+                <label><input type="checkbox" value="type-Numerical" /> Numerical</label>
+                <label><input type="checkbox" value="type-ShortAnswer" /> Short Answer</label>
+                <label><input type="checkbox" value="type-Proof" /> Proof</label>
+            </div>
+        </div>
+    `;
+}
+
+function getSelectedFilters(filterType) {
+    const checkboxes = document.querySelectorAll(`input[type="checkbox"][value^="${filterType}"]:checked`);
+    const selectedValues = Array.from(checkboxes).map(checkbox => checkbox.value.replace(`${filterType}-`, ''));
+
+    return selectedValues;
+}
+
+function attachFilterEventListeners() {
+    // Attach event listeners to filter checkboxes
+    const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+    filterCheckboxes.forEach(checkbox => {
+        // Exclude the dark mode toggle button
+        if (checkbox.id !== 'darkmode-toggle') {
+            checkbox.addEventListener('click', loadProblemList);
+        }
+    });
+}
+
+function filterFinal(){
+    const filterContainer = document.getElementById("filter-container");
+    filterContainer.innerHTML = createFilterHTML();
+    attachFilterEventListeners();
+}
+
+function problemListPro(){
+    filterFinal();
+    loadProblemList();
+}
+
+function toggleFilter() {
+    const filterContainer2 = document.querySelector('.filter-container-2');
+    filterContainer2.classList.toggle('active');
+}
+
+const problemsList = [
+    {
+        title: "Problem 1",
+        file: "problem-1.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["polynomials"],
+            type: "Numerical",
+        },
+    },
+    {
+        title: "Problem 2",
+        file: "problem-2.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["sequenceAndSeries"],
+            type: "Numerical",
+        },
+    },
+    {
+        title: "Problem 3",
+        file: "problem-3.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["trigonometry"],
+            type: "Proof",
+        },
+    },
+    {
+        title: "Problem 4",
+        file: "problem-4.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["trigonometry"],
+            type: "Proof",
+        },
+    },
+    {
+        title: "Problem 5",
+        file: "problem-5.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["trigonometry"],
+            type: "Numerical",
+        },
+    },
+    {
+        title: "Problem 6",
+        file: "problem-6.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["trigonometry"],
+            type: "Proof",
+        },
+    },
+    {
+        title: "Problem 7",
+        file: "problem-7.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["trigonometry"],
+            type: "Proof",
+        },
+    },
+    {
+        title: "Problem 8",
+        file: "problem-8.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["trigonometry"],
+            type: "Proof",
+        },
+    },
+    {
+        title: "Problem 9",
+        file: "problem-9.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["trigonometry"],
+            type: "Numerical",
+        },
+    },
+    {
+        title: "Problem 10",
+        file: "problem-10.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["trigonometry"],
+            type: "ShortAnswer",
+        },
+    },
+    {
+        title: "Problem 11",
+        file: "problem-11.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["trigonometry"],
+            type: "MCQ",
+        },
+    },
+    {
+        title: "Problem 12",
+        file: "problem-12.html",
+        tags: {
+            difficulty: "difficult",
+            concept: ["functions","calculus"],
+            type: "MSQ",
+        },
+    },
+    {
+        title: "Problem 13",
+        file: "problem-13.html",
+        tags: {
+            difficulty: "difficult",
+            concept: ["functions","trigonometry"],
+            type: "MSQ",
+        },
+    },
+    {
+        title: "Problem 14",
+        file: "problem-14.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["calculus","trigonometry"],
+            type: "MCQ",
+        },
+    },
+    {
+        title: "Problem 15",
+        file: "problem-15.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["calculus","functions","graph"],
+            type: "ShortAnswer",
+        },
+    },
+    {
+        title: "Problem 16",
+        file: "problem-16.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["calculus"],
+            type: "MCQ",
+        },
+    },
+    {
+        title: "Problem 17",
+        file: "problem-17.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["calculus","functions","trigonometry"],
+            type: "MSQ",
+        },
+    },
+    {
+        title: "Problem 18",
+        file: "problem-18.html",
+        tags: {
+            difficulty: "hard",
+            concept: ["calculus","functions","trigonometry"],
+            type: "MCQ",
+        },
+    },
+    {
+        title: "Problem 19",
+        file: "problem-19.html",
+        tags: {
+            difficulty: "easy",
+            concept: ["calculus","functions"],
+            type: "MCQ",
+        },
+    },
+    {
+        title: "Problem 20",
+        file: "problem-20.html",
+        tags: {
+            difficulty: "easy",
+            concept: ["trigonometry","functions"],
+            type: "MCQ",
+        },
+    },
+    {
+        title: "Problem 21",
+        file: "problem-21.html",
+        tags: {
+            difficulty: "easy",
+            concept: ["calculus","functions"],
+            type: "MSQ",
+        },
+    },
+    {
+        title: "Problem 22",
+        file: "problem-22.html",
+        tags: {
+            difficulty: "easy",
+            concept: ["calculus","functions"],
+            type: "MCQ",
+        },
+    },
+    {
+        title: "Problem 23",
+        file: "problem-23.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["trigonometry","functions"],
+            type: "MSQ",
+        },
+    },
+    {
+        title: "Problem 24",
+        file: "problem-24.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["calculus","functions","graph"],
+            type: "Numerical",
+        },
+    },
+    {
+        title: "Problem 25",
+        file: "problem-25.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["logarithm"],
+            type: "MCQ",
+        },
+    },
+    {
+        title: "Problem 26",
+        file: "problem-26.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["logarithm","functions"],
+            type: "MCQ",
+        },
+    },
+    {
+        title: "Problem 27",
+        file: "problem-27.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["logarithm","functions"],
+            type: "MCQ",
+        },
+    },
+    {
+        title: "Problem 28",
+        file: "problem-28.html",
+        tags: {
+            difficulty: "medium",
+            concept: ["logarithm"],
+            type: "Proof",
+        },
+    },
+    {
+        title: "Problem 29",
+        file: "problem-29.html",
+        tags: {
+            difficulty: "easy",
+            concept: ["logarithm","sequenceAndSeries"],
+            type: "Numerical",
+        },
+    },
+    {
+        title: "Problem 30",
+        file: "problem-30.html",
+        tags: {
+            difficulty: "easy",
+            concept: ["logarithm"],
+            type: "Proof",
+        },
+    },
+    // Add more problems as needed
+];
+
+  </script>
+  <script src="script.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script async src="prism/prism.js"></script>
+  <script src="tikzjax.js"></script>
+  <script async defer data-domain="latex.now.sh" src="https://plausible.io/js/plausible.js"></script>
+</body>
+
+</html>

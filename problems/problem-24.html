@@ -1,46 +1,128 @@
-<h2 id="idpl">Problem 24</h2>
-<p>
-  Let $f:\mathbb{R}\to\mathbb{R}$ and $g:\mathbb{R}\to\mathbb{R} $ be respectively given by, <br>
-  $f(x)=|x|+1$ <br>
-  $g(x)=x^2+1$ <br>
-  We Define $h:\mathbb{R}\to\mathbb{R}$ by $h(x)=\left\{\begin{array}{ll}
-  \max {{f(x),g(x)}} & , x \leq 0 \\
-  \min {f(x),g(x)} & , x \gt 0   
-  \end{array}\right.$ <br>
-  In how many number of points $h(x)$ is not differentiable.
-</p>
-<h2>Solution</h2>
-<button class="reveal-buttons">&#9660;</button>
-<div class="solution">
-  <p>
-    
-    <div class="tikz-container">
-      <script type="text/tikz">
-        \begin{tikzpicture}
-        % Axis
-        \draw[->] (-5,0) -- (5,0) node[below] {$x$};
-        \draw[->] (0,-1) -- (0,5) node[left] {$y$};
-      
-        % Function f(x)
-        \draw[blue, domain=-5:5, samples=100] plot (\x, {abs(\x) + 1}) node[right] {$f(x) = |x| + 1$};
-      
-        % Function g(x)
-        \draw[red, domain=-2:2, samples=100] plot (\x, {abs(\x^2) + 1}) node[right] {$g(x) = x^2 + 1$};
-      
-        % Function h(x)
-        \draw[green, domain=-2:0, samples=100] plot (\x, {max(abs(\x) + 1, abs(\x^2) + 1)});
-        \draw[green, domain=0:5, samples=100] plot (\x, {min(abs(\x) + 1, abs(\x^2) + 1)}) node[right] {$h(x)$};
-      
-        % Indicate the point of non-differentiability
-        \filldraw[black] (0, 1) circle (2pt);
-        \filldraw[black] (1, 2) circle (2pt);
-        \filldraw[black] (-1, 2) circle (2pt);
-      \end{tikzpicture}
-      </script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/90900b5e60.js" crossorigin="anonymous"></script>
+  <title>CMI Preparation</title>
+
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/prism/prism.css" />
+  <link rel="stylesheet" type="text/css" href="/fonts.css">
+  <link rel="icon" type="image/x-icon" href="/static/favicon_io/favicon.ico">
+
+</head>
+
+<body>
+<div class="main-container">
+  <div class="nav-bar">
+    <table class="nav-table">
+      <tr> 
+        <td style="border: 0; width: 50%;">
+          <a href="/"><h3 class="nav-bar-title">CMI Preparation</h3></a>
+        </td>
+        <td style="border: 0; text-align: right; width: 25%;">
+          <a href="/problemList.html" class="nav-links hover-underline-animation">Problems</a>
+        </td>
+        <td style="border: 0; text-align: right; width: 20%;">
+          <a href="/contact.html" class="nav-links hover-underline-animation" style=" margin-right: 1rem; font-weight: bold;" >Contact</a>
+        </td>
+        <td>
+          <input type="checkbox" class="sr-only" id="darkmode-toggle">
+          <label for="darkmode-toggle" class="toggle">
+              <span></span>
+          </label>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="mobile-control">
+    <div id="body-container">
+
+
+
+
+      <h2 id="idpl">Problem 24</h2>
+      <p>
+        Let $f:\mathbb{R}\to\mathbb{R}$ and $g:\mathbb{R}\to\mathbb{R} $ be respectively given by, <br>
+        $f(x)=|x|+1$ <br>
+        $g(x)=x^2+1$ <br>
+        We Define $h:\mathbb{R}\to\mathbb{R}$ by $h(x)=\left\{\begin{array}{ll}
+        \max {{f(x),g(x)}} & , x \leq 0 \\
+        \min {f(x),g(x)} & , x \gt 0   
+        \end{array}\right.$ <br>
+        In how many number of points $h(x)$ is not differentiable.
+      </p>
+      <h2>Solution</h2>
+      <button class="reveal-buttons">&#9660;</button>
+      <div class="solution">
+        <p>
+          
+          <div class="tikz-container">
+            <script type="text/tikz">
+              \begin{tikzpicture}
+              % Axis
+              \draw[->] (-5,0) -- (5,0) node[below] {$x$};
+              \draw[->] (0,-1) -- (0,5) node[left] {$y$};
+            
+              % Function f(x)
+              \draw[blue, domain=-5:5, samples=100] plot (\x, {abs(\x) + 1}) node[right] {$f(x) = |x| + 1$};
+            
+              % Function g(x)
+              \draw[red, domain=-2:2, samples=100] plot (\x, {abs(\x^2) + 1}) node[right] {$g(x) = x^2 + 1$};
+            
+              % Function h(x)
+              \draw[green, domain=-2:0, samples=100] plot (\x, {max(abs(\x) + 1, abs(\x^2) + 1)});
+              \draw[green, domain=0:5, samples=100] plot (\x, {min(abs(\x) + 1, abs(\x^2) + 1)}) node[right] {$h(x)$};
+            
+              % Indicate the point of non-differentiability
+              \filldraw[black] (0, 1) circle (2pt);
+              \filldraw[black] (1, 2) circle (2pt);
+              \filldraw[black] (-1, 2) circle (2pt);
+            \end{tikzpicture}
+            </script>
+            </div>
+            The Green curve Shown (In Light Mode) in the plot above is the plot of $h(x)$.
+            <br>As we can see the slope of the curve changes drastically in 3 points. In those points the function $h(x)$ is not differentiable.
+            $$\therefore$$ the function is not differentiable at <b>3 points</b>.
+            <center>Answer: 3</center>
+         </p>
       </div>
-      The Green curve Shown (In Light Mode) in the plot above is the plot of $h(x)$.
-      <br>As we can see the slope of the curve changes drastically in 3 points. In those points the function $h(x)$ is not differentiable.
-      $$\therefore$$ the function is not differentiable at <b>3 points</b>.
-      <center>Answer: 3</center>
-   </p>
+      
+
+            
+
+    
+    
+
+    
+    </div>
+    <div class="empty" style="height: 100px;">
+
+    </div>
+  </div>
 </div>
+<script>
+  MathJax = {
+      tex: {
+        inlineMath: [['$', '$'],],
+      },
+    }
+    
+</script>
+<script src="../script.js"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script async src="prism/prism.js"></script>
+<script src="/tikzjax.js"></script>
+<script async defer data-domain="latex.now.sh" src="https://plausible.io/js/plausible.js"></script>
+</body>
+
+</html>
+
+
+

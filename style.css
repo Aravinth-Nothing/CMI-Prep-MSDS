@@ -5,6 +5,320 @@
  * Licensed under MIT (https://github.com/vincentdoerig/latex-css/blob/master/LICENSE)
 */
 
+.main-container{
+  background-color: #FAF6F0;
+  padding: 0px;
+  width: 80ch;
+  }
+  #problem-list-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      list-style-type: none;
+      padding: 0;
+  }
+
+  #problem-list-container li {
+      background-color: #F4EAE0;
+      padding: 15px;
+      border-radius: 5px;
+      text-align: center;
+      border: 1px solid #F4DFC8;
+      transition: background-color 0.3s ease;
+  }
+
+  #problem-list-container li:hover {
+      background-color: #FAF6F0;
+  }
+
+  #problem-list-container a {
+      text-decoration: none;
+      color: #333;
+      display: block;
+      font-size: 1em;
+      transition: transform 0.3s ease; /* Add transition for transform */
+  }
+
+  #problem-list-container li:hover a {
+      transform: scale(1.1); /* Adjust the scaling factor as needed */
+  }
+  body {
+  padding: 0;
+  background-color: #FAF6F0;
+  display: flex;
+  overflow-y: scroll;
+}
+a:-webkit-any-link{
+  text-decoration: none;
+}
+.fab{
+color : #000000;
+}
+  body::-webkit-scrollbar {
+      width: 15px; 
+  }
+
+  body::-webkit-scrollbar-thumb {
+      background-color: #F4DFC8;
+  }
+
+  body::-webkit-scrollbar-track {
+      background-color: #FAF6F0; 
+  }
+  .nav-bar{
+    padding: 2rem;
+    background-color: #F4EAE0;
+    border: 1px solid #F4DFC8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  .nav-table{
+    width: 100%; 
+    border:0; 
+    background-color: #F4EAE0;
+  }
+  .nav-links{
+    text-decoration: none;
+    color: #000000; 
+    font-weight: bold;
+  }
+  .nav-bar-title{
+    margin: 0px; 
+    color: #000000;
+  }
+  .hover-underline-animation {
+display: inline-block;
+position: relative;
+color: #000000;
+}
+
+.hover-underline-animation::after {
+content: '';
+position: absolute;
+width: 100%;
+transform: scaleX(0);
+height: 2px;
+bottom: -5px;
+left: 0;
+background-color: #000000;
+transform-origin: bottom right;
+transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+transform: scaleX(1);
+transform-origin: bottom left;
+}
+.solution {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-out;
+}
+.solution.revealed {
+  max-height: 3000px;
+}
+.reveal-buttons{
+background-color: #F4DFC8;
+border: 0;  
+margin-right: 3px;
+font-size: 15px;
+transition: font-size 0.3s ease-out;
+}
+.reveal-buttons:hover{
+font-size: 17px;
+border-radius: 10%;
+}
+.filter-toggle{
+text-align: center;
+margin-top: 1rem;
+}
+
+.filter-container-2 {
+display: flex;
+justify-content: space-around;
+align-items: flex-start;
+margin-bottom: 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.filter-container-2.active {
+  max-height: 500px; /* Set the max height based on your content */
+}
+
+.filter-column {
+  flex: 1;
+}
+
+/* Updated styles to stack options vertically */
+.filter-column label {
+  display: block;
+  margin-bottom: 8px;
+}
+.tikz-container{
+    scale: 70%;
+  }
+#backButton {
+    position: fixed;
+    top: 300px; /* Adjust as needed */
+    left: 8%; /* Adjust as needed */
+    width: 30px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Initially hide the button */
+    
+  }
+  .back-triangle{
+    font-size: 3rem;
+  }
+  a {
+--link-focus-outline: none;
+}
+
+.blog-img{
+filter: invert(100%); 
+}
+input:checked + .toggle span::before {
+background-image: url('static/moon.png');
+width: 50%; /* Adjusted width for the image */
+height: 50%;
+filter: invert(100%);
+
+}
+input:checked + .toggle{
+background-color: #000000;
+}
+.sr-only {
+position: absolute;
+left: -9999px;
+opacity: 0;
+}
+
+.toggle {
+position: relative;
+width: 49px; /* Adjusted width to accommodate both icons */
+height: 24px;
+background-color: #FAF6F0;
+border: 2px solid #F4DFC8;
+border-radius: 12px;
+cursor: pointer;
+display: flex;
+align-items: center;
+padding: 2px;
+}
+
+.toggle span {
+position: relative;
+display: block;
+width: 30px; /* Adjusted width for the container */
+height: 30px; /* Adjusted height for the container */
+border-radius: 50%;
+transition: transform 0.3s;
+}
+
+.toggle span::before {
+content: "";
+position: absolute;
+width: 70%; /* Adjusted width for the image */
+height: 70%; /* Adjusted height for the image */
+background-image: url('static/sun.png'); /* Default image */
+background-size: cover;
+background-position: center; /* Center the background image */
+border-radius: 50%;
+transform: translateX(2px) translateY(4px);
+}
+
+.toggle span img {
+width: 100%; /* Make the image fill the container */
+height: 100%; /* Make the image fill the container */
+border-radius: 50%;
+}
+
+input:checked + .toggle span {
+transform: translateX(23px) translateY(2px); /* Apply the transform to .toggle span */
+}
+
+
+.dark-mode{
+background-color: #000000;
+color: #e0dfdc;
+}
+.dark-mode g{
+  stroke: rgb(100%,100%,100%);
+}
+.dark-mode .main-container{
+background-color: #000000;
+}
+.dark-mode .nav-table{
+background-color: #2d2d2d;
+}
+.dark-mode .nav-bar{
+background-color: #2d2d2d;
+border: 1px solid #919191;
+border-radius: 2%;
+box-shadow: 0 0 10px #e0dfdc;
+color: #e0dfdc;
+}
+.dark-mode .nav-bar-title{
+margin: 0px; 
+color: #e0dfdc;
+}
+.dark-mode .nav-links{
+margin: 0px; 
+color: #e0dfdc;
+}
+.dark-mode .hover-underline-animation {
+display: inline-block;
+position: relative;
+color: #e0dfdc;
+}
+.dark-mode .hover-underline-animation::after {
+background-color: #e0dfdc;
+}
+.dark-mode .reveal-buttons{
+background-color: #2d2d2d;
+color: #e0dfdc;
+}
+.dark-mode #problem-list-container li{
+background-color: #2d2d2d;
+border: 1px solid #fafafa;
+}
+.dark-mode #problem-list-container a{
+color: #e0dfdc;
+}
+.dark-mode #problem-list-container li:hover{
+background-color: #000000;
+}
+.dark-mode .fab{
+color: #e0dfdc;
+}
+.dark-mode .blog-img{
+filter: invert(0%);
+}
+.dark-mode .back-triangle{
+    color: #e0dfdc;
+}
+@media only screen and (max-width: 600px) {
+.mobile-control{
+padding: 0 30px;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @font-face {
   font-family: 'Latin Modern';
   font-style: normal;
@@ -100,55 +414,9 @@
   box-sizing: border-box;
 }
 
-:root {
-  --body-color: hsl(0, 5%, 10%);
-  --body-bg-color: hsl(210, 20%, 98%);
-  --link-visited: hsl(0, 100%, 33%);
-  --link-focus-outline: hsl(220, 90%, 52%);
-  --pre-bg-color: hsl(210, 28%, 93%);
-  --kbd-bg-color: hsl(210, 5%, 100%);
-  --kbd-border-color: hsl(210, 5%, 70%);
-  --table-border-color: black;
-  --border-width-thin: 1.36px;
-  --border-width-thick: 2.27px;
-  --sidenote-target-border-color: hsl(55, 55%, 70%);
-  --footnotes-border-color: hsl(0, 0%, 39%);
-  --text-indent-size: 1.463rem; /* In 12pt [Latin Modern font] LaTeX article
-  \parindent =~ 17.625pt; taking also into account the ratio
-  1pt[LaTeX] = (72 / 72.27) * 1pt[HTML], with default 12pt/1rem LaTeX.css font
-  size, the identation value in rem CSS units is: 
-  \parindent =~ 17.625 * (72 / 72.27) / 12 = 1.463rem. */
-}
 
-.latex-dark {
-  --body-color: hsl(0, 0%, 86%);
-  --body-bg-color: hsl(0, 0%, 16%);
-  --link-visited: hsl(196 80% 77%);
-  --link-focus-outline: hsl(215, 63%, 73%);
-  --pre-bg-color: hsl(0, 1%, 25%);
-  --kbd-bg-color: hsl(0, 0%, 16%);
-  --kbd-border-color: hsl(210, 5%, 70%);
-  --table-border-color: white;
-  --sidenote-target-border-color: hsl(0, 0%, 59%);
-  --footnotes-border-color: hsl(0, 0%, 59%);
-  --proof-symbol-filter: invert(80%);
-}
 
-@media (prefers-color-scheme: dark) {
-   .latex-dark-auto {
-    --body-color: hsl(0, 0%, 86%);
-    --body-bg-color: hsl(0, 0%, 16%);
-    --link-visited: hsl(196 80% 77%);
-    --link-focus-outline: hsl(215, 63%, 73%);
-    --pre-bg-color: hsl(0, 1%, 25%);
-    --kbd-bg-color: hsl(0, 0%, 16%);
-    --kbd-border-color: hsl(210, 5%, 70%);
-    --table-border-color: white;
-    --sidenote-target-border-color: hsl(0, 0%, 59%);
-    --footnotes-border-color: hsl(0, 0%, 59%);
-    --proof-symbol-filter: invert(80%);
-  }
-}
+
 
 /* Remove default margin */
 body,
@@ -189,7 +457,6 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   margin: 0 auto;
-  padding: 2rem 1.25rem;
 
   counter-reset: theorem definition sidenote-counter;
 
@@ -229,20 +496,11 @@ p.no-indent {
 }
 
 /* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
+
 
 /* Make links red */
-a,
-a:visited {
-  color: var(--link-visited);
-}
 
-a:focus {
-  outline-offset: 2px;
-  outline: 2px solid var(--link-focus-outline);
-}
+
 
 /* Make images easier to work with */
 img {
